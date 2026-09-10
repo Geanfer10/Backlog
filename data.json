@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T20:00:48.970Z",
+  "generated_at": "2026-09-10T20:21:10.800Z",
   "board_name": "Backlog de Atividades - Manutenção",
   "board_url": "https://messigean18s-team.monday.com/boards/18430494778",
   "groups": [
@@ -27,7 +27,7 @@
       "group_id": "group_mm7217sw",
       "group_title": "⚪ Backlog (Não Iniciado)",
       "departamento": "Mecânica",
-      "equipamento": "",
+      "equipamento": "Esteira TP08",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
       "status": "Planejado",
@@ -36,7 +36,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.03.16.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239168381/WhatsApp%20Image%202026-09-09%20at%2008.03.16.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T200048Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e0c7e518dda8dd12f8c729241db9e982b27b1abacbba069f86da288a2a48751f"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239168381/WhatsApp%20Image%202026-09-09%20at%2008.03.16.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T202110Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eaefdf6dd1984b616dd584a63adb4f803513a89f8f1f725fbbfa23b7d6d3e073"
         }
       ]
     },
@@ -46,7 +46,7 @@
       "group_id": "group_mm7217sw",
       "group_title": "⚪ Backlog (Não Iniciado)",
       "departamento": "Mecânica",
-      "equipamento": "",
+      "equipamento": "Esteira Alimentação TP06",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
       "status": "Planejado",
@@ -55,7 +55,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.05.38.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239166434/WhatsApp%20Image%202026-09-09%20at%2008.05.38.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T200048Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=74b9e50d6634511f90f77b108af9136b34e692bc187e433caff6aaccdbe3076a"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239166434/WhatsApp%20Image%202026-09-09%20at%2008.05.38.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T202110Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8f690ec1bd5709bf0d19795f891d3e3d29b27f5ba3b97c65df1c4dc4bc08e449"
         }
       ]
     },
@@ -65,12 +65,31 @@
       "group_id": "group_mm7217sw",
       "group_title": "⚪ Backlog (Não Iniciado)",
       "departamento": "Mecânica",
-      "equipamento": "",
+      "equipamento": "Esteira ATM06",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
       "status": "Planejado",
       "responsaveis": "",
       "prazo": "2026-09-13",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-09-10 at 09.19.26.mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3240482113/WhatsApp%20Video%202026-09-10%20at%2009.19.26.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T202110Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=75f520a89d99902c36eb98761256a3fe77ab1d4f5f4feae51a2539595303f635"
+        }
+      ]
+    },
+    {
+      "id": "13020911584",
+      "name": "Manutenção No conjunto de redutor da packform",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "",
       "fotos": []
     },
     {
@@ -79,7 +98,7 @@
       "group_id": "topics",
       "group_title": "🔴 Urgente / Alta Prioridade",
       "departamento": "Mecânica",
-      "equipamento": "",
+      "equipamento": "Esteira TP08",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
       "status": "Planejado",
@@ -88,7 +107,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.04.15.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239167994/WhatsApp%20Image%202026-09-09%20at%2008.04.15.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T200048Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e8a700b0b02e8023ab8400ea78944c1f8aa02cfee1a11388192dafd0f6607bac"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239167994/WhatsApp%20Image%202026-09-09%20at%2008.04.15.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T202110Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b40aa6f2e1c5a93da023662c051a903c786035faa0bcd2941f3327507bc6aaea"
         }
       ]
     },
@@ -98,7 +117,7 @@
       "group_id": "topics",
       "group_title": "🔴 Urgente / Alta Prioridade",
       "departamento": "Mecânica",
-      "equipamento": "",
+      "equipamento": "Robô 04 ATM",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
       "status": "Planejado",
@@ -107,7 +126,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-10 at 09.19.26.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239169211/WhatsApp%20Image%202026-09-10%20at%2009.19.26.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T200048Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dcad45b14fbe299e151b24877166ef2c5c9dd6c06c555c8bcd2bf67845fd670b"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239169211/WhatsApp%20Image%202026-09-10%20at%2009.19.26.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T202110Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=215c5e1ae50ffd489ffc50e66e8ba3378caecb34bc9e564207a341aa702a512b"
         }
       ]
     },
@@ -117,7 +136,21 @@
       "group_id": "topics",
       "group_title": "🔴 Urgente / Alta Prioridade",
       "departamento": "Elétrica",
-      "equipamento": "",
+      "equipamento": "Desbobinador Mespack E",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": []
+    },
+    {
+      "id": "13020895126",
+      "name": "Troca da Tolva Mespack D",
+      "group_id": "topics",
+      "group_title": "🔴 Urgente / Alta Prioridade",
+      "departamento": "Elétrica",
+      "equipamento": "Tolva Mespack D",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
       "status": "Planejado",

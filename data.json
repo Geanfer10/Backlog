@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T14:35:57.730Z",
+  "generated_at": "2026-09-10T14:50:30.436Z",
   "board_name": "Backlog de Atividades - Manutenção",
   "board_url": "https://messigean18s-team.monday.com/boards/18430494778",
   "groups": [
@@ -36,7 +36,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.03.16.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239168381/WhatsApp%20Image%202026-09-09%20at%2008.03.16.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T143557Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6d3b064c7b5acb193c14cef23843b4792867c95f3e56959d8ab80979482cf0d2"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239168381/WhatsApp%20Image%202026-09-09%20at%2008.03.16.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T145030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bc9cc5d4b0283c7f07b05aa6fb72bb7e09ab8706e10b632ba70e32be879c6658"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.05.38.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239166434/WhatsApp%20Image%202026-09-09%20at%2008.05.38.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T143557Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b379f076739341e04b49cc5afe506a41b4ec603388d7848ed8a5e445766e74c2"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239166434/WhatsApp%20Image%202026-09-09%20at%2008.05.38.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T145030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=610a3e1027f71be194e4f2eb8ebad61fdc7b03a4d2cf73811587df8197e0f5b1"
         }
       ]
     },
@@ -68,7 +68,7 @@
       "equipamento": "",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
-      "status": "Concluído",
+      "status": "Planejado",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": []
@@ -88,7 +88,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.04.15.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239167994/WhatsApp%20Image%202026-09-09%20at%2008.04.15.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T143557Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e9eec88a3c7076f422eea147e020dc2fc0001cc89f6c3b0ebe06418bf92a2310"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239167994/WhatsApp%20Image%202026-09-09%20at%2008.04.15.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T145030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b8497217254d4863cee56192d5e51ee9304b9046bafbdde834a0ee076a96bd73"
         }
       ]
     },
@@ -107,7 +107,7 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-10 at 09.19.26.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239169211/WhatsApp%20Image%202026-09-10%20at%2009.19.26.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T143557Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0b30ed9d7f85123dc6a297177f173d963e286c8eb669928bae4b28448aca98fd"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239169211/WhatsApp%20Image%202026-09-10%20at%2009.19.26.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T145030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5ac19f74cf0475c389e3c81331b2ed663ee0bda8f69e6e13b32ee7ab79c42802"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "equipamento": "",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
-      "status": "Concluído",
+      "status": "Planejado",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": []

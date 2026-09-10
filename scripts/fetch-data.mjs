@@ -81,7 +81,7 @@ function extractAssetIds(fileColumnValue) {
 async function fetchAssets(assetIds) {
   if (assetIds.length === 0) return {};
   const query = `
-    query ($ids: [ID!]) {
+    query ($ids: [ID!]!) { 
       assets(ids: $ids) {
         id
         name

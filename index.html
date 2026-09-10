@@ -1,480 +1,390 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Backlog de Manutenção — Goiás Verde</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backlog de Manutenção</title>
 <style>
-  :root{
-    --bg:#12161a;
-    --surface:#1b2127;
-    --surface-alt:#232a31;
-    --line:#2c343b;
-    --text:#eef1f3;
-    --muted:#8b96a1;
-    --amber:#ffb347;
+  :root {
+    --bg: #0b0e14;
+    --panel: #12161f;
+    --card: #171c27;
+    --border: #232938;
+    --text: #f2f3f5;
+    --muted: #8b93a3;
+    --accent: #ff6b57;
 
-    --c-alta:#e5484d;
-    --c-media:#f5a623;
-    --c-baixa:#4a9eff;
+    --status-nao-iniciado: #757575;
+    --status-planejado: #579bfc;
+    --status-em-andamento: #fdab3d;
+    --status-pendente: #df2f4a;
+    --status-concluido: #00c875;
 
-    --s-nao-iniciado:#6b7580;
-    --s-planejado:#4a9eff;
-    --s-em-andamento:#f5a623;
-    --s-pendente:#e5484d;
-    --s-concluido:#3ecf8e;
-  }
+    --prio-baixa: #579bfc;
+    --prio-media: #fdab3d;
+    --prio-alta: #df2f4a;
 
-  *{ box-sizing:border-box; }
-  html,body{ margin:0; padding:0; }
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:"Inter", sans-serif;
-    min-height:100vh;
-  }
+    --tipo-preventiva: #00c875;
+    --tipo-corretiva: #df2f4a;
+    --tipo-preditiva: #579bfc;
+    --tipo-melhoria: #fdab3d;
 
-  header.top{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:24px;
-    padding:28px 32px 20px;
-    border-bottom:1px solid var(--line);
-    flex-wrap:wrap;
+    --dep-mecanica: #00c875;
+    --dep-eletrica: #007eb5;
+    --dep-automacao: #9d50dd;
+    --dep-pcm: #784bd1;
+    --dep-civil: #7f5347;
+    --dep-utilidades: #ff6d3b;
+    --dep-producao: #175a63;
   }
 
-  .brand h1{
-    font-family:"Barlow Condensed", sans-serif;
-    font-weight:700;
-    font-size:clamp(28px, 3vw, 42px);
-    letter-spacing:0.3px;
-    margin:0;
-    line-height:1;
-  }
-  .brand p{
-    margin:6px 0 0;
-    color:var(--muted);
-    font-size:14px;
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   }
 
-  .counters{
-    display:flex;
-    gap:28px;
-  }
-  .counter{
-    text-align:right;
-    min-width:74px;
-  }
-  .counter .n{
-    font-family:"Barlow Condensed", sans-serif;
-    font-weight:700;
-    font-size:38px;
-    line-height:1;
-  }
-  .counter .l{
-    display:block;
-    margin-top:4px;
-    font-size:12px;
-    color:var(--muted);
-  }
-  .counter.urgente .n{ color:var(--c-alta); }
-  .counter.andamento .n{ color:var(--s-em-andamento); }
-  .counter.backlog .n{ color:var(--muted); }
-  .counter.concluido .n{ color:var(--s-concluido); }
-
-  .filters{
-    padding:18px 32px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:22px;
-    border-bottom:1px solid var(--line);
-    background:var(--surface);
-  }
-  .filter-group{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-  }
-  .filter-group .fg-label{
-    font-size:11px;
-    color:var(--muted);
-  }
-  .chips{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-  }
-  .chip{
-    border:1px solid var(--line);
-    background:transparent;
-    color:var(--text);
-    padding:5px 12px;
-    font-size:13px;
-    font-family:"Inter", sans-serif;
-    border-radius:3px;
-    cursor:pointer;
-  }
-  .chip.active{
-    background:var(--amber);
-    border-color:var(--amber);
-    color:#181300;
-    font-weight:600;
-  }
-  .search-wrap{
-    margin-left:auto;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    min-width:220px;
-  }
-  #search{
-    background:var(--surface-alt);
-    border:1px solid var(--line);
-    color:var(--text);
-    padding:7px 10px;
-    border-radius:3px;
-    font-family:"Inter", sans-serif;
-    font-size:13px;
+  header {
+    padding: 28px 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
   }
 
-  main{ padding:24px 32px 60px; }
+  header h1 { margin: 0 0 6px; font-size: 28px; font-weight: 800; }
+  header .subtitle { color: var(--muted); font-size: 14px; }
+  header .subtitle a { color: var(--accent); text-decoration: underline; }
 
-  .group-section{ margin-bottom:34px; }
-  .group-title{
-    font-family:"Barlow Condensed", sans-serif;
-    font-weight:600;
-    font-size:20px;
-    margin:0 0 14px;
-    color:var(--text);
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .group-title .count{
-    font-size:13px;
-    color:var(--muted);
-    font-family:"Inter", sans-serif;
-  }
+  .counters { display: flex; gap: 36px; }
+  .counter { text-align: center; }
+  .counter .num { font-size: 26px; font-weight: 800; line-height: 1; }
+  .counter .label { font-size: 11px; letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+  .counter.urgente .num { color: var(--status-pendente); }
+  .counter.andamento .num { color: var(--status-em-andamento); }
+  .counter.backlog .num { color: #cfd3db; }
+  .counter.concluido .num { color: var(--status-concluido); }
 
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-    gap:14px;
+  .filters {
+    padding: 18px 40px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
   }
 
-  .card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:4px;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-  }
-  .card .thumb{
-    width:100%;
-    height:150px;
-    background:var(--surface-alt) center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--muted);
-    font-size:12px;
-    cursor:pointer;
-  }
-  .card .body{
-    padding:14px 14px 16px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    flex:1;
-  }
-  .card .title{
-    font-weight:600;
-    font-size:15px;
-    line-height:1.3;
-  }
-  .card .local{
-    font-size:13px;
-    color:var(--muted);
-  }
-  .tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-  }
-  .tag{
-    font-size:11px;
-    padding:3px 8px;
-    border-radius:2px;
-    font-weight:600;
-    color:#12161a;
-    white-space:nowrap;
-  }
-  .tag.outline{
-    background:transparent;
-    border:1px solid var(--line);
-    color:var(--muted);
-    font-weight:500;
+  .filter-group .filter-title {
+    font-size: 11px; letter-spacing: 0.04em; color: var(--muted);
+    text-transform: uppercase; margin-bottom: 8px;
   }
 
-  .meta{
-    margin-top:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:12px;
-    color:var(--muted);
-    border-top:1px solid var(--line);
-    padding-top:8px;
-  }
-  .meta .prazo.overdue{ color:var(--c-alta); font-weight:600; }
+  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; }
 
-  .empty{
-    color:var(--muted);
-    font-size:14px;
-    padding:40px 0;
-    text-align:center;
+  .chip {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.15s;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #1a0f0c; font-weight: 700; }
+
+  .search-box { margin-left: auto; }
+  .search-box input {
+    background: var(--panel); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 12px; border-radius: 6px; font-size: 13px; width: 260px;
   }
 
-  footer{
-    padding:16px 32px 28px;
-    color:var(--muted);
-    font-size:12px;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:8px;
-  }
-  footer a{ color:var(--amber); text-decoration:none; }
+  main { padding: 24px 40px 60px; }
 
-  .lightbox{
-    position:fixed; inset:0;
-    background:rgba(10,12,14,0.92);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:50;
-    padding:32px;
+  .group-header { display: flex; align-items: center; gap: 10px; margin: 30px 0 14px; }
+  .group-header:first-child { margin-top: 0; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .group-header h2 { font-size: 17px; margin: 0; }
+  .group-header .count { color: var(--muted); font-size: 14px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+
+  .card .thumb { width: 100%; height: 160px; object-fit: cover; display: block; background: #1d222e; }
+  .card .thumb.placeholder { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 13px; }
+
+  .card .card-body { padding: 16px; }
+  .card .atividade { font-weight: 700; font-size: 15px; margin-bottom: 10px; line-height: 1.3; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag { font-size: 11.5px; padding: 3px 9px; border-radius: 5px; font-weight: 700; color: #0b0e14; }
+  .tag.plain { background: transparent; border: 1px solid var(--border); color: var(--muted); font-weight: 500; }
+
+  .card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 10px;
   }
-  .lightbox.open{ display:flex; }
-  .lightbox img{ max-width:100%; max-height:100%; border:1px solid var(--line); }
+  .card-footer .sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  .empty-state { color: var(--muted); font-size: 13px; padding: 20px 0; }
+
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 20px; }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="brand">
+<header>
+  <div>
     <h1>Backlog de Manutenção</h1>
-    <p>PCM · Goiás Verde — <span id="board-link-wrap"><a id="board-link" href="#" target="_blank" style="color:var(--amber)">abrir board no Monday</a></span></p>
+    <div class="subtitle">
+      PCM · Goiás Verde —
+      <a href="https://messigean18s-team.monday.com/boards/18430494778" target="_blank">abrir board no Monday</a>
+    </div>
   </div>
   <div class="counters">
-    <div class="counter urgente"><span class="n" id="cnt-urgente">–</span><span class="l">Urgente</span></div>
-    <div class="counter andamento"><span class="n" id="cnt-andamento">–</span><span class="l">Em andamento</span></div>
-    <div class="counter backlog"><span class="n" id="cnt-backlog">–</span><span class="l">Backlog</span></div>
-    <div class="counter concluido"><span class="n" id="cnt-concluido">–</span><span class="l">Concluído</span></div>
+    <div class="counter urgente"><div class="num" id="count-urgente">0</div><div class="label">Urgente</div></div>
+    <div class="counter andamento"><div class="num" id="count-andamento">0</div><div class="label">Em andamento</div></div>
+    <div class="counter backlog"><div class="num" id="count-backlog">0</div><div class="label">Backlog</div></div>
+    <div class="counter concluido"><div class="num" id="count-concluido">0</div><div class="label">Concluído</div></div>
   </div>
 </header>
 
 <div class="filters">
   <div class="filter-group">
-    <span class="fg-label">STATUS</span>
-    <div class="chips" id="f-status"></div>
+    <div class="filter-title">Status</div>
+    <div class="chip-row" id="status-filters"></div>
   </div>
   <div class="filter-group">
-    <span class="fg-label">PRIORIDADE</span>
-    <div class="chips" id="f-prioridade"></div>
+    <div class="filter-title">Prioridade</div>
+    <div class="chip-row" id="prioridade-filters"></div>
   </div>
   <div class="filter-group">
-    <span class="fg-label">DEPARTAMENTO</span>
-    <div class="chips" id="f-departamento"></div>
+    <div class="filter-title">Departamento</div>
+    <div class="chip-row" id="departamento-filters"></div>
   </div>
   <div class="filter-group">
-    <span class="fg-label">TIPO DE MANUTENÇÃO</span>
-    <div class="chips" id="f-tipo"></div>
+    <div class="filter-title">Tipo de Manutenção</div>
+    <div class="chip-row" id="tipo-filters"></div>
   </div>
-  <div class="search-wrap">
-    <span class="fg-label">BUSCAR</span>
-    <input id="search" type="text" placeholder="equipamento, local, atividade..." />
+  <div class="filter-group search-box">
+    <div class="filter-title">Buscar</div>
+    <input type="text" id="search-input" placeholder="equipamento, local, atividade...">
   </div>
 </div>
 
-<main id="main">
-  <div class="empty">Carregando dados...</div>
+<main id="main-content">
+  <div class="empty-state">Carregando dados...</div>
 </main>
 
-<footer>
-  <span id="updated-at">—</span>
-  <span>Atualiza automaticamente a cada 5 min</span>
-</footer>
-
-<div class="lightbox" id="lightbox">
-  <img id="lightbox-img" src="" alt="" />
-</div>
+<footer id="footer-updated"></footer>
 
 <script>
-const TAG_COLORS = {
-  prioridade: { "Alta": "var(--c-alta)", "Média": "var(--c-media)", "Baixa": "var(--c-baixa)" },
-  status: {
-    "Não Iniciado": "var(--s-nao-iniciado)",
-    "Planejado": "var(--s-planejado)",
-    "Em Andamento": "var(--s-em-andamento)",
-    "Pendente": "var(--s-pendente)",
-    "Concluído": "var(--s-concluido)"
-  }
+const STATUS_COLORS = {
+  "Não Iniciado": "var(--status-nao-iniciado)",
+  "Planejado": "var(--status-planejado)",
+  "Em Andamento": "var(--status-em-andamento)",
+  "Pendente": "var(--status-pendente)",
+  "Concluído": "var(--status-concluido)",
+};
+const PRIORIDADE_COLORS = {
+  "Baixa": "var(--prio-baixa)",
+  "Média": "var(--prio-media)",
+  "Alta": "var(--prio-alta)",
+};
+const TIPO_COLORS = {
+  "Preventiva": "var(--tipo-preventiva)",
+  "Corretiva": "var(--tipo-corretiva)",
+  "Preditiva": "var(--tipo-preditiva)",
+  "Melhoria": "var(--tipo-melhoria)",
+};
+const DEP_COLORS = {
+  "Mecânica": "var(--dep-mecanica)",
+  "Elétrica": "var(--dep-eletrica)",
+  "Automação": "var(--dep-automacao)",
+  "PCM": "var(--dep-pcm)",
+  "Civil": "var(--dep-civil)",
+  "Utilidades": "var(--dep-utilidades)",
+  "Produção": "var(--dep-producao)",
 };
 
-const GROUP_ORDER = [
-  "🔴 Urgente / Alta Prioridade",
-  "🟡 Em Andamento",
-  "⚪ Backlog (Não Iniciado)",
-  "🟢 Concluído"
-];
+let allData = null;
+let activeStatus = null;
+let activePrioridade = null;
+let activeDepartamento = null;
+let activeTipo = null;
 
-let DATA = { items: [], groups: [] };
-const state = { status: new Set(), prioridade: new Set(), departamento: new Set(), tipo: new Set(), q: "" };
-
-function uniqueValues(field) {
-  return [...new Set(DATA.items.map(i => i[field]).filter(Boolean))];
+function fmtDate(iso) {
+  if (!iso) return "sem data";
+  const parts = iso.split("-");
+  if (parts.length !== 3) return iso;
+  return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }
 
-function buildChips(containerId, field, stateKey) {
-  const el = document.getElementById(containerId);
-  const values = uniqueValues(field);
-  el.innerHTML = "";
+function buildChips(containerId, values, onSelect) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
   values.forEach(v => {
-    const btn = document.createElement("button");
-    btn.className = "chip";
-    btn.textContent = v;
-    btn.onclick = () => {
-      if (state[stateKey].has(v)) state[stateKey].delete(v);
-      else state[stateKey].add(v);
-      btn.classList.toggle("active");
-      render();
-    };
-    el.appendChild(btn);
+    const chip = document.createElement("div");
+    chip.className = "chip";
+    chip.textContent = v;
+    chip.addEventListener("click", () => onSelect(v, chip));
+    container.appendChild(chip);
   });
 }
 
-function isOverdue(dateStr, status) {
-  if (!dateStr || status === "Concluído") return false;
-  const d = new Date(dateStr + "T23:59:59");
-  return d.getTime() < Date.now();
-}
-
-function tag(text, colorVar, outline) {
-  return `<span class="tag${outline ? " outline" : ""}" style="${outline ? "" : `background:${colorVar}`}">${text}</span>`;
-}
-
-function cardHtml(item) {
-  const photo = item.fotos && item.fotos[0];
-  const thumb = photo
-    ? `<div class="thumb" style="background-image:url('${photo.url}')" data-full="${photo.url}" onclick="openLightbox('${photo.url.replace(/'/g, "\\'")}')"></div>`
-    : `<div class="thumb">sem foto</div>`;
-
-  const overdue = isOverdue(item.prazo, item.status);
-  const prioColor = TAG_COLORS.prioridade[item.prioridade] || "var(--muted)";
-  const statusColor = TAG_COLORS.status[item.status] || "var(--muted)";
-
-  return `
-    <div class="card">
-      ${thumb}
-      <div class="body">
-        <div class="title">${item.name}</div>
-        ${item.equipamento ? `<div class="local">${item.equipamento}</div>` : ""}
-        <div class="tags">
-          ${item.status ? tag(item.status, statusColor) : ""}
-          ${item.prioridade ? tag(item.prioridade, prioColor) : ""}
-          ${item.departamento ? tag(item.departamento, "", true) : ""}
-          ${item.tipo_manutencao ? tag(item.tipo_manutencao, "", true) : ""}
-        </div>
-        <div class="meta">
-          <span>${item.responsaveis || "sem responsável"}</span>
-          <span class="prazo ${overdue ? "overdue" : ""}">${item.prazo ? item.prazo.split("-").reverse().join("/") : "sem prazo"}</span>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function matchesFilters(item) {
-  if (state.status.size && !state.status.has(item.status)) return false;
-  if (state.prioridade.size && !state.prioridade.has(item.prioridade)) return false;
-  if (state.departamento.size && !state.departamento.has(item.departamento)) return false;
-  if (state.tipo.size && !state.tipo.has(item.tipo_manutencao)) return false;
-  if (state.q) {
-    const hay = `${item.name} ${item.equipamento}`.toLowerCase();
-    if (!hay.includes(state.q.toLowerCase())) return false;
-  }
-  return true;
+function selectChip(container, chipEl, current, value) {
+  container.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+  if (current === value) return null;
+  chipEl.classList.add("active");
+  return value;
 }
 
 function render() {
-  const filtered = DATA.items.filter(matchesFilters);
+  if (!allData) return;
+  const search = document.getElementById("search-input").value.trim().toLowerCase();
 
-  document.getElementById("cnt-urgente").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[0]).length;
-  document.getElementById("cnt-andamento").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[1]).length;
-  document.getElementById("cnt-backlog").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[2]).length;
-  document.getElementById("cnt-concluido").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[3]).length;
+  const groupCounters = { topics: 0, group_mm72db89: 0, group_mm7217sw: 0, group_mm7298xt: 0 };
+  const main = document.getElementById("main-content");
+  main.innerHTML = "";
+  let totalRendered = 0;
 
-  const main = document.getElementById("main");
-  if (filtered.length === 0) {
-    main.innerHTML = `<div class="empty">Nenhuma atividade encontrada com esses filtros.</div>`;
+  const dotColors = {
+    topics: "var(--status-pendente)",
+    group_mm72db89: "var(--status-em-andamento)",
+    group_mm7217sw: "#cfd3db",
+    group_mm7298xt: "var(--status-concluido)",
+  };
+
+  allData.groups.forEach(group => {
+    const filtered = group.items.filter(item => {
+      if (activeStatus && item.status !== activeStatus) return false;
+      if (activePrioridade && item.prioridade !== activePrioridade) return false;
+      if (activeDepartamento && item.departamento !== activeDepartamento) return false;
+      if (activeTipo && item.tipo_manutencao !== activeTipo) return false;
+      if (search) {
+        const haystack = `${item.atividade} ${item.equipamento_local} ${item.responsavel}`.toLowerCase();
+        if (!haystack.includes(search)) return false;
+      }
+      return true;
+    });
+
+    groupCounters[group.id] = filtered.length;
+    totalRendered += filtered.length;
+
+    const header = document.createElement("div");
+    header.className = "group-header";
+    header.innerHTML = `
+      <div class="dot" style="background:${dotColors[group.id] || '#666'}"></div>
+      <h2>${group.title}</h2>
+      <span class="count">(${filtered.length})</span>
+    `;
+    main.appendChild(header);
+
+    if (filtered.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "empty-state";
+      empty.textContent = "Nenhuma atividade neste grupo com os filtros atuais.";
+      main.appendChild(empty);
+      return;
+    }
+
+    const cardsWrap = document.createElement("div");
+    cardsWrap.className = "cards";
+
+    filtered.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const statusColor = STATUS_COLORS[item.status] || "var(--muted)";
+      const prioColor = PRIORIDADE_COLORS[item.prioridade] || "var(--muted)";
+      const tipoColor = TIPO_COLORS[item.tipo_manutencao] || "var(--muted)";
+      const depColor = DEP_COLORS[item.departamento] || "var(--muted)";
+      const foto = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : null;
+
+      const thumbHtml = foto
+        ? `<img class="thumb" src="${foto}" alt="Foto da atividade" loading="lazy">`
+        : `<div class="thumb placeholder">sem foto</div>`;
+
+      card.innerHTML = `
+        ${thumbHtml}
+        <div class="card-body">
+          <div class="atividade">${item.atividade}</div>
+          <div class="tags">
+            ${item.status ? `<span class="tag" style="background:${statusColor}">${item.status}</span>` : ""}
+            ${item.prioridade ? `<span class="tag" style="background:${prioColor}">${item.prioridade}</span>` : ""}
+            ${item.departamento ? `<span class="tag" style="background:${depColor}">${item.departamento}</span>` : ""}
+            ${item.tipo_manutencao ? `<span class="tag" style="background:${tipoColor}">${item.tipo_manutencao}</span>` : ""}
+          </div>
+          <div class="card-footer">
+            <div>
+              <div>${item.equipamento_local ? item.equipamento_local : "sem equipamento/local"}</div>
+              <div class="sub">${item.responsavel ? item.responsavel : "sem responsável"}</div>
+            </div>
+            <div>${fmtDate(item.prazo)}</div>
+          </div>
+        </div>
+      `;
+      cardsWrap.appendChild(card);
+    });
+
+    main.appendChild(cardsWrap);
+  });
+
+  if (totalRendered === 0) {
+    main.innerHTML = '<div class="empty-state">Nenhuma atividade encontrada com os filtros atuais.</div>';
+  }
+
+  document.getElementById("count-urgente").textContent = groupCounters.topics;
+  document.getElementById("count-andamento").textContent = groupCounters.group_mm72db89;
+  document.getElementById("count-backlog").textContent = groupCounters.group_mm7217sw;
+  document.getElementById("count-concluido").textContent = groupCounters.group_mm7298xt;
+}
+
+async function init() {
+  try {
+    const res = await fetch("/api/data", { cache: "no-store" });
+    allData = await res.json();
+  } catch (e) {
+    document.getElementById("main-content").innerHTML =
+      '<div class="empty-state">Não foi possível carregar os dados. Verifique se o token do Monday está configurado no Vercel (MONDAY_API_TOKEN).</div>';
     return;
   }
 
-  const groups = [...new Set(filtered.map(i => i.group_title))]
-    .sort((a, b) => GROUP_ORDER.indexOf(a) - GROUP_ORDER.indexOf(b));
-
-  main.innerHTML = groups.map(g => {
-    const items = filtered.filter(i => i.group_title === g);
-    return `
-      <section class="group-section">
-        <h2 class="group-title">${g} <span class="count">(${items.length})</span></h2>
-        <div class="grid">${items.map(cardHtml).join("")}</div>
-      </section>
-    `;
-  }).join("");
-}
-
-function openLightbox(url) {
-  document.getElementById("lightbox-img").src = url;
-  document.getElementById("lightbox").classList.add("open");
-}
-document.getElementById("lightbox").addEventListener("click", () => {
-  document.getElementById("lightbox").classList.remove("open");
-});
-
-async function loadData() {
-  try {
-    const res = await fetch("data.json?t=" + Date.now());
-    DATA = await res.json();
-    document.getElementById("board-link").href = DATA.board_url || "#";
-    document.getElementById("updated-at").textContent = DATA.generated_at
-      ? "Atualizado em " + new Date(DATA.generated_at).toLocaleString("pt-BR")
-      : "Ainda sem dados — aguardando primeira execução da automação";
-
-    buildChips("f-status", "status", "status");
-    buildChips("f-prioridade", "prioridade", "prioridade");
-    buildChips("f-departamento", "departamento", "departamento");
-    buildChips("f-tipo", "tipo_manutencao", "tipo");
-
+  buildChips("status-filters", ["Não Iniciado", "Planejado", "Em Andamento", "Pendente", "Concluído"], (v, el) => {
+    activeStatus = selectChip(document.getElementById("status-filters"), el, activeStatus, v);
     render();
-  } catch (e) {
-    document.getElementById("main").innerHTML = `<div class="empty">Não foi possível carregar data.json ainda.</div>`;
+  });
+  buildChips("prioridade-filters", ["Baixa", "Média", "Alta"], (v, el) => {
+    activePrioridade = selectChip(document.getElementById("prioridade-filters"), el, activePrioridade, v);
+    render();
+  });
+  buildChips("departamento-filters", ["Mecânica", "Elétrica", "Automação", "PCM", "Civil", "Utilidades", "Produção"], (v, el) => {
+    activeDepartamento = selectChip(document.getElementById("departamento-filters"), el, activeDepartamento, v);
+    render();
+  });
+  buildChips("tipo-filters", ["Preventiva", "Corretiva", "Preditiva", "Melhoria"], (v, el) => {
+    activeTipo = selectChip(document.getElementById("tipo-filters"), el, activeTipo, v);
+    render();
+  });
+
+  document.getElementById("search-input").addEventListener("input", render);
+
+  if (allData.generated_at) {
+    const d = new Date(allData.generated_at);
+    document.getElementById("footer-updated").textContent = "Atualizado agora: " + d.toLocaleString("pt-BR");
   }
+
+  render();
 }
 
-document.getElementById("search").addEventListener("input", (e) => {
-  state.q = e.target.value;
-  render();
-});
-
-loadData();
-setInterval(loadData, 5 * 60 * 1000);
+init();
 </script>
 
 </body>

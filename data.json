@@ -1,7 +1,129 @@
 {
-  "generated_at": null,
+  "generated_at": "2026-09-10T13:45:20.567Z",
   "board_name": "Backlog de Atividades - Manutenção",
   "board_url": "https://messigean18s-team.monday.com/boards/18430494778",
-  "groups": [],
-  "items": []
+  "groups": [
+    {
+      "id": "group_mm7298xt",
+      "title": "🟢 Concluído"
+    },
+    {
+      "id": "group_mm7217sw",
+      "title": "⚪ Backlog (Não Iniciado)"
+    },
+    {
+      "id": "group_mm72db89",
+      "title": "🟡 Em Andamento"
+    },
+    {
+      "id": "topics",
+      "title": "🔴 Urgente / Alta Prioridade"
+    }
+  ],
+  "items": [
+    {
+      "id": "13016174621",
+      "name": "Verificar base do robô encaixotamento Mespack E",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-09-10 at 09.19.26.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239169211/WhatsApp%20Image%202026-09-10%20at%2009.19.26.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T134520Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4fa2d607c4e24195188e7a29e92f6c9b861f2f3d90aa0bfa003316251d43b195"
+        }
+      ]
+    },
+    {
+      "id": "13016198861",
+      "name": "Verificar vibração no redutor da esteira de caixa Encaixotamento Mespack E",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": []
+    },
+    {
+      "id": "13016168367",
+      "name": "Troca do rolamento da esteira TP08",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-09-09 at 08.04.15.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239167994/WhatsApp%20Image%202026-09-09%20at%2008.04.15.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T134520Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5e601d3e3853e5250400838166ef76a4bb0ae46472fc539f99f09b6d909fde73"
+        }
+      ]
+    },
+    {
+      "id": "13016194115",
+      "name": "Revisar corrente da esteira TP08",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-09-09 at 08.03.16.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239168381/WhatsApp%20Image%202026-09-09%20at%2008.03.16.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T134520Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9a8bb463c6f593996a3f6161c10a9688209ffa511f486ec9563938b85d72f7b8"
+        }
+      ]
+    },
+    {
+      "id": "13016180292",
+      "name": "Revisar corrente da esteira alimentação robô desempilhador",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-09-09 at 08.05.38.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239166434/WhatsApp%20Image%202026-09-09%20at%2008.05.38.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260910%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260910T134520Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c274cc5c5766b86d9b3c487263f725e5e71e32157c6431b720e7fe0d5f493bde"
+        }
+      ]
+    },
+    {
+      "id": "13016229004",
+      "name": "Manutenção no sistema de ar comprimido Mespack E",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Elétrica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": []
+    }
+  ]
 }

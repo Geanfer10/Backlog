@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Backlog de Manutenção — Goiás Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#12161a;
+    --surface:#1b2127;
+    --surface-alt:#232a31;
+    --line:#2c343b;
+    --text:#eef1f3;
+    --muted:#8b96a1;
+    --amber:#ffb347;
+
+    --c-alta:#e5484d;
+    --c-media:#f5a623;
+    --c-baixa:#4a9eff;
+
+    --s-nao-iniciado:#6b7580;
+    --s-planejado:#4a9eff;
+    --s-em-andamento:#f5a623;
+    --s-pendente:#e5484d;
+    --s-concluido:#3ecf8e;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Inter", sans-serif;
+    min-height:100vh;
+  }
+
+  header.top{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+    padding:28px 32px 20px;
+    border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+
+  .brand h1{
+    font-family:"Barlow Condensed", sans-serif;
+    font-weight:700;
+    font-size:clamp(28px, 3vw, 42px);
+    letter-spacing:0.3px;
+    margin:0;
+    line-height:1;
+  }
+  .brand p{
+    margin:6px 0 0;
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  .counters{
+    display:flex;
+    gap:28px;
+  }
+  .counter{
+    text-align:right;
+    min-width:74px;
+  }
+  .counter .n{
+    font-family:"Barlow Condensed", sans-serif;
+    font-weight:700;
+    font-size:38px;
+    line-height:1;
+  }
+  .counter .l{
+    display:block;
+    margin-top:4px;
+    font-size:12px;
+    color:var(--muted);
+  }
+  .counter.urgente .n{ color:var(--c-alta); }
+  .counter.andamento .n{ color:var(--s-em-andamento); }
+  .counter.backlog .n{ color:var(--muted); }
+  .counter.concluido .n{ color:var(--s-concluido); }
+
+  .filters{
+    padding:18px 32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+    border-bottom:1px solid var(--line);
+    background:var(--surface);
+  }
+  .filter-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .filter-group .fg-label{
+    font-size:11px;
+    color:var(--muted);
+  }
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .chip{
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--text);
+    padding:5px 12px;
+    font-size:13px;
+    font-family:"Inter", sans-serif;
+    border-radius:3px;
+    cursor:pointer;
+  }
+  .chip.active{
+    background:var(--amber);
+    border-color:var(--amber);
+    color:#181300;
+    font-weight:600;
+  }
+  .search-wrap{
+    margin-left:auto;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:220px;
+  }
+  #search{
+    background:var(--surface-alt);
+    border:1px solid var(--line);
+    color:var(--text);
+    padding:7px 10px;
+    border-radius:3px;
+    font-family:"Inter", sans-serif;
+    font-size:13px;
+  }
+
+  main{ padding:24px 32px 60px; }
+
+  .group-section{ margin-bottom:34px; }
+  .group-title{
+    font-family:"Barlow Condensed", sans-serif;
+    font-weight:600;
+    font-size:20px;
+    margin:0 0 14px;
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .group-title .count{
+    font-size:13px;
+    color:var(--muted);
+    font-family:"Inter", sans-serif;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+    gap:14px;
+  }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .card .thumb{
+    width:100%;
+    height:150px;
+    background:var(--surface-alt) center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--muted);
+    font-size:12px;
+    cursor:pointer;
+  }
+  .card .body{
+    padding:14px 14px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    flex:1;
+  }
+  .card .title{
+    font-weight:600;
+    font-size:15px;
+    line-height:1.3;
+  }
+  .card .local{
+    font-size:13px;
+    color:var(--muted);
+  }
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .tag{
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:2px;
+    font-weight:600;
+    color:#12161a;
+    white-space:nowrap;
+  }
+  .tag.outline{
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--muted);
+    font-weight:500;
+  }
+
+  .meta{
+    margin-top:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+    padding-top:8px;
+  }
+  .meta .prazo.overdue{ color:var(--c-alta); font-weight:600; }
+
+  .empty{
+    color:var(--muted);
+    font-size:14px;
+    padding:40px 0;
+    text-align:center;
+  }
+
+  footer{
+    padding:16px 32px 28px;
+    color:var(--muted);
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  footer a{ color:var(--amber); text-decoration:none; }
+
+  .lightbox{
+    position:fixed; inset:0;
+    background:rgba(10,12,14,0.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:50;
+    padding:32px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{ max-width:100%; max-height:100%; border:1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <h1>Backlog de Manutenção</h1>
+    <p>PCM · Goiás Verde — <span id="board-link-wrap"><a id="board-link" href="#" target="_blank" style="color:var(--amber)">abrir board no Monday</a></span></p>
+  </div>
+  <div class="counters">
+    <div class="counter urgente"><span class="n" id="cnt-urgente">–</span><span class="l">Urgente</span></div>
+    <div class="counter andamento"><span class="n" id="cnt-andamento">–</span><span class="l">Em andamento</span></div>
+    <div class="counter backlog"><span class="n" id="cnt-backlog">–</span><span class="l">Backlog</span></div>
+    <div class="counter concluido"><span class="n" id="cnt-concluido">–</span><span class="l">Concluído</span></div>
+  </div>
+</header>
+
+<div class="filters">
+  <div class="filter-group">
+    <span class="fg-label">STATUS</span>
+    <div class="chips" id="f-status"></div>
+  </div>
+  <div class="filter-group">
+    <span class="fg-label">PRIORIDADE</span>
+    <div class="chips" id="f-prioridade"></div>
+  </div>
+  <div class="filter-group">
+    <span class="fg-label">DEPARTAMENTO</span>
+    <div class="chips" id="f-departamento"></div>
+  </div>
+  <div class="filter-group">
+    <span class="fg-label">TIPO DE MANUTENÇÃO</span>
+    <div class="chips" id="f-tipo"></div>
+  </div>
+  <div class="search-wrap">
+    <span class="fg-label">BUSCAR</span>
+    <input id="search" type="text" placeholder="equipamento, local, atividade..." />
+  </div>
+</div>
+
+<main id="main">
+  <div class="empty">Carregando dados...</div>
+</main>
+
+<footer>
+  <span id="updated-at">—</span>
+  <span>Atualiza automaticamente a cada 5 min</span>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<script>
+const TAG_COLORS = {
+  prioridade: { "Alta": "var(--c-alta)", "Média": "var(--c-media)", "Baixa": "var(--c-baixa)" },
+  status: {
+    "Não Iniciado": "var(--s-nao-iniciado)",
+    "Planejado": "var(--s-planejado)",
+    "Em Andamento": "var(--s-em-andamento)",
+    "Pendente": "var(--s-pendente)",
+    "Concluído": "var(--s-concluido)"
+  }
+};
+
+const GROUP_ORDER = [
+  "🔴 Urgente / Alta Prioridade",
+  "🟡 Em Andamento",
+  "⚪ Backlog (Não Iniciado)",
+  "🟢 Concluído"
+];
+
+let DATA = { items: [], groups: [] };
+const state = { status: new Set(), prioridade: new Set(), departamento: new Set(), tipo: new Set(), q: "" };
+
+function uniqueValues(field) {
+  return [...new Set(DATA.items.map(i => i[field]).filter(Boolean))];
+}
+
+function buildChips(containerId, field, stateKey) {
+  const el = document.getElementById(containerId);
+  const values = uniqueValues(field);
+  el.innerHTML = "";
+  values.forEach(v => {
+    const btn = document.createElement("button");
+    btn.className = "chip";
+    btn.textContent = v;
+    btn.onclick = () => {
+      if (state[stateKey].has(v)) state[stateKey].delete(v);
+      else state[stateKey].add(v);
+      btn.classList.toggle("active");
+      render();
+    };
+    el.appendChild(btn);
+  });
+}
+
+function isOverdue(dateStr, status) {
+  if (!dateStr || status === "Concluído") return false;
+  const d = new Date(dateStr + "T23:59:59");
+  return d.getTime() < Date.now();
+}
+
+function tag(text, colorVar, outline) {
+  return `<span class="tag${outline ? " outline" : ""}" style="${outline ? "" : `background:${colorVar}`}">${text}</span>`;
+}
+
+function cardHtml(item) {
+  const photo = item.fotos && item.fotos[0];
+  const thumb = photo
+    ? `<div class="thumb" style="background-image:url('${photo.url}')" data-full="${photo.url}" onclick="openLightbox('${photo.url.replace(/'/g, "\\'")}')"></div>`
+    : `<div class="thumb">sem foto</div>`;
+
+  const overdue = isOverdue(item.prazo, item.status);
+  const prioColor = TAG_COLORS.prioridade[item.prioridade] || "var(--muted)";
+  const statusColor = TAG_COLORS.status[item.status] || "var(--muted)";
+
+  return `
+    <div class="card">
+      ${thumb}
+      <div class="body">
+        <div class="title">${item.name}</div>
+        ${item.equipamento ? `<div class="local">${item.equipamento}</div>` : ""}
+        <div class="tags">
+          ${item.status ? tag(item.status, statusColor) : ""}
+          ${item.prioridade ? tag(item.prioridade, prioColor) : ""}
+          ${item.departamento ? tag(item.departamento, "", true) : ""}
+          ${item.tipo_manutencao ? tag(item.tipo_manutencao, "", true) : ""}
+        </div>
+        <div class="meta">
+          <span>${item.responsaveis || "sem responsável"}</span>
+          <span class="prazo ${overdue ? "overdue" : ""}">${item.prazo ? item.prazo.split("-").reverse().join("/") : "sem prazo"}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function matchesFilters(item) {
+  if (state.status.size && !state.status.has(item.status)) return false;
+  if (state.prioridade.size && !state.prioridade.has(item.prioridade)) return false;
+  if (state.departamento.size && !state.departamento.has(item.departamento)) return false;
+  if (state.tipo.size && !state.tipo.has(item.tipo_manutencao)) return false;
+  if (state.q) {
+    const hay = `${item.name} ${item.equipamento}`.toLowerCase();
+    if (!hay.includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+
+function render() {
+  const filtered = DATA.items.filter(matchesFilters);
+
+  document.getElementById("cnt-urgente").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[0]).length;
+  document.getElementById("cnt-andamento").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[1]).length;
+  document.getElementById("cnt-backlog").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[2]).length;
+  document.getElementById("cnt-concluido").textContent = DATA.items.filter(i => i.group_title === GROUP_ORDER[3]).length;
+
+  const main = document.getElementById("main");
+  if (filtered.length === 0) {
+    main.innerHTML = `<div class="empty">Nenhuma atividade encontrada com esses filtros.</div>`;
+    return;
+  }
+
+  const groups = [...new Set(filtered.map(i => i.group_title))]
+    .sort((a, b) => GROUP_ORDER.indexOf(a) - GROUP_ORDER.indexOf(b));
+
+  main.innerHTML = groups.map(g => {
+    const items = filtered.filter(i => i.group_title === g);
+    return `
+      <section class="group-section">
+        <h2 class="group-title">${g} <span class="count">(${items.length})</span></h2>
+        <div class="grid">${items.map(cardHtml).join("")}</div>
+      </section>
+    `;
+  }).join("");
+}
+
+function openLightbox(url) {
+  document.getElementById("lightbox-img").src = url;
+  document.getElementById("lightbox").classList.add("open");
+}
+document.getElementById("lightbox").addEventListener("click", () => {
+  document.getElementById("lightbox").classList.remove("open");
+});
+
+async function loadData() {
+  try {
+    const res = await fetch("data.json?t=" + Date.now());
+    DATA = await res.json();
+    document.getElementById("board-link").href = DATA.board_url || "#";
+    document.getElementById("updated-at").textContent = DATA.generated_at
+      ? "Atualizado em " + new Date(DATA.generated_at).toLocaleString("pt-BR")
+      : "Ainda sem dados — aguardando primeira execução da automação";
+
+    buildChips("f-status", "status", "status");
+    buildChips("f-prioridade", "prioridade", "prioridade");
+    buildChips("f-departamento", "departamento", "departamento");
+    buildChips("f-tipo", "tipo_manutencao", "tipo");
+
+    render();
+  } catch (e) {
+    document.getElementById("main").innerHTML = `<div class="empty">Não foi possível carregar data.json ainda.</div>`;
+  }
+}
+
+document.getElementById("search").addEventListener("input", (e) => {
+  state.q = e.target.value;
+  render();
+});
+
+loadData();
+setInterval(loadData, 5 * 60 * 1000);
+</script>
+
+</body>
+</html>

@@ -308,9 +308,14 @@ function render() {
       const depColor = DEP_COLORS[item.departamento] || "var(--muted)";
       const foto = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : null;
 
-      const thumbHtml = foto
-        ? `<img class="thumb" src="${foto}" alt="Foto da atividade" loading="lazy">`
-        : `<div class="thumb placeholder">sem foto</div>`;
+      let thumbHtml;
+      if (foto && foto.tipo === "video") {
+        thumbHtml = `<video class="thumb" src="${foto.url}" controls preload="metadata"></video>`;
+      } else if (foto) {
+        thumbHtml = `<img class="thumb" src="${foto.url}" alt="Foto da atividade" loading="lazy">`;
+      } else {
+        thumbHtml = `<div class="thumb placeholder">sem foto</div>`;
+      }
 
       card.innerHTML = `
         ${thumbHtml}

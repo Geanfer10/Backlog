@@ -22,7 +22,7 @@ query ($boardId: [ID!]) {
           id
           text
         }
-        assets { id public_url }
+        assets { id name public_url }
       }
     }
   }
@@ -58,7 +58,14 @@ export default async function handler(req, res) {
 
     for (const item of board.items_page.items) {
       const colMap = Object.fromEntries(item.column_values.map(cv => [cv.id, cv.text || ""]));
-      const fotos = (item.assets || []).map(a => a.public_url).filter(Boolean);
+      const VIDEO_EXT = [".mp4", ".mov", ".webm", ".avi", ".mkv"];
+      const fotos = (item.assets || [])
+        .filter(a => a.public_url)
+        .map(a => {
+          const name = (a.name || "").toLowerCase();
+          const isVideo = VIDEO_EXT.some(ext => name.endsWith(ext));
+          return { url: a.public_url, tipo: isVideo ? "video" : "imagem" };
+        });
       const record = {
         id: item.id,
         atividade: item.name,

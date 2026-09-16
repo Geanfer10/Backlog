@@ -1,8 +1,6 @@
 name: Atualizar dados do backlog
 
 on:
-  schedule:
-    - cron: "*/15 * * * *" # a cada 15 minutos
   workflow_dispatch: {}
 
 permissions:

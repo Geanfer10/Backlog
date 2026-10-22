@@ -117,8 +117,73 @@
 
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 
-  .card .thumb { width: 100%; height: 160px; object-fit: cover; display: block; background: #1d222e; }
-  .card .thumb.placeholder { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 13px; }
+  /* ---------- Mídia do card (foto única ou carrossel) ---------- */
+  .media { position: relative; height: 170px; background: #1d222e; }
+  .media.placeholder { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 13px; }
+
+  .track {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .track::-webkit-scrollbar { display: none; }
+
+  .slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    background: #1d222e;
+  }
+  .slide img, .slide video { width: 100%; height: 100%; display: block; }
+  .slide img { object-fit: cover; cursor: zoom-in; }
+  .slide video { object-fit: contain; background: #000; }
+  .slide .broken {
+    position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 12px; background: #1d222e; text-align: center; padding: 10px;
+  }
+  .slide.failed .broken { display: flex; }
+  .slide.failed img, .slide.failed video { visibility: hidden; }
+
+  .nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 0; padding: 0; cursor: pointer;
+    background: rgba(11, 14, 20, 0.62); color: #fff;
+    font-size: 20px; line-height: 32px; text-align: center;
+    opacity: 0; transition: opacity 0.15s, background 0.15s;
+    z-index: 2;
+  }
+  .nav:hover { background: rgba(255, 107, 87, 0.9); }
+  .nav.prev { left: 8px; }
+  .nav.next { right: 8px; }
+  .media:hover .nav, .nav:focus-visible { opacity: 1; }
+  @media (hover: none) { .nav { opacity: 0.85; width: 28px; height: 28px; line-height: 28px; font-size: 18px; } }
+
+  .badge {
+    position: absolute; top: 8px; right: 8px; z-index: 2;
+    background: rgba(11, 14, 20, 0.7); color: #fff;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.03em;
+    padding: 3px 8px; border-radius: 999px; pointer-events: none;
+  }
+
+  .dots {
+    position: absolute; left: 0; right: 0; bottom: 8px; z-index: 2;
+    display: flex; justify-content: center; gap: 6px; pointer-events: none;
+  }
+  .dots i {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s, background 0.15s;
+  }
+  .dots i.on { background: #fff; transform: scale(1.35); }
 
   .card .card-body { padding: 16px; }
   .card .atividade { font-weight: 700; font-size: 15px; margin-bottom: 10px; line-height: 1.3; }
@@ -136,6 +201,46 @@
   .empty-state { color: var(--muted); font-size: 13px; padding: 20px 0; }
 
   footer { text-align: center; color: var(--muted); font-size: 12px; padding: 20px; }
+  footer.warn { color: var(--status-em-andamento); }
+
+  /* ---------- Esqueleto de carregamento ---------- */
+  .skel { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .skel .s-media { height: 170px; }
+  .skel .s-line { height: 12px; border-radius: 6px; margin: 14px 16px 0; }
+  .skel .s-line.short { width: 45%; margin-bottom: 18px; }
+  .skel .s-media, .skel .s-line {
+    background: linear-gradient(90deg, #1b2130 25%, #242b3d 37%, #1b2130 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+  }
+  @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: 0 0; } }
+
+  /* ---------- Ampliar foto ---------- */
+  .lb {
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(6, 8, 12, 0.94);
+    display: none; align-items: center; justify-content: center;
+  }
+  .lb.open { display: flex; }
+  .lb-stage { max-width: 92vw; max-height: 88vh; display: flex; }
+  .lb-stage img, .lb-stage video { max-width: 92vw; max-height: 88vh; border-radius: 6px; background: #000; }
+  .lb-btn {
+    position: absolute; border: 0; cursor: pointer; color: #fff;
+    background: rgba(255, 255, 255, 0.12); border-radius: 50%;
+    width: 44px; height: 44px; font-size: 26px; line-height: 44px; text-align: center; padding: 0;
+  }
+  .lb-btn:hover { background: var(--accent); }
+  .lb-close { top: 18px; right: 18px; font-size: 22px; }
+  .lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+  .lb-count { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; color: #cfd3db; font-size: 13px; }
+
+  @media (max-width: 700px) {
+    header, .filters, main { padding-left: 16px; padding-right: 16px; }
+    .counters { gap: 22px; }
+    .search-box { margin-left: 0; width: 100%; }
+    .search-box input { width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -145,7 +250,7 @@
     <h1>Backlog de Manutenção</h1>
     <div class="subtitle">
       PCM · Goiás Verde —
-      <a href="https://messigean18s-team.monday.com/boards/18430494778" target="_blank">abrir board no Monday</a>
+      <a href="https://messigean18s-team.monday.com/boards/18430494778" target="_blank" rel="noopener">abrir board no Monday</a>
     </div>
   </div>
   <div class="counters">
@@ -179,13 +284,31 @@
   </div>
 </div>
 
+<!-- O esqueleto aparece na hora, antes mesmo dos dados chegarem do Monday -->
 <main id="main-content">
-  <div class="empty-state">Carregando dados...</div>
+  <div class="cards">
+    <div class="skel"><div class="s-media"></div><div class="s-line"></div><div class="s-line short"></div></div>
+    <div class="skel"><div class="s-media"></div><div class="s-line"></div><div class="s-line short"></div></div>
+    <div class="skel"><div class="s-media"></div><div class="s-line"></div><div class="s-line short"></div></div>
+    <div class="skel"><div class="s-media"></div><div class="s-line"></div><div class="s-line short"></div></div>
+  </div>
 </main>
 
 <footer id="footer-updated"></footer>
 
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb-btn lb-close" id="lb-close" aria-label="Fechar">✕</button>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Anterior">‹</button>
+  <div class="lb-stage" id="lb-stage"></div>
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Próxima">›</button>
+  <div class="lb-count" id="lb-count"></div>
+</div>
+
 <script>
+const REFRESH_MS = 30000;          // atualiza os dados sozinho a cada 30 s
+const FETCH_TIMEOUT_MS = 20000;
+const URL_TTL_MS = 45 * 60 * 1000; // os links de foto do Monday expiram em 1 h; renova antes disso
+
 const STATUS_COLORS = {
   "Não Iniciado": "var(--status-nao-iniciado)",
   "Planejado": "var(--status-planejado)",
@@ -213,12 +336,32 @@ const DEP_COLORS = {
   "Utilidades": "var(--dep-utilidades)",
   "Produção": "var(--dep-producao)",
 };
+const DOT_COLORS = {
+  topics: "var(--status-pendente)",
+  group_mm72db89: "var(--status-em-andamento)",
+  group_mm7217sw: "#cfd3db",
+  group_mm7298xt: "var(--status-concluido)",
+};
 
 let allData = null;
+let lastSignature = "";
 let activeStatus = null;
 let activePrioridade = null;
 let activeDepartamento = null;
 let activeTipo = null;
+
+const urlCache = new Map();   // id da mídia -> { url, ts }  (mantém o mesmo link enquanto vale; o navegador reaproveita o cache)
+const slideIndex = new Map(); // id do item -> slide atual do carrossel (não perde a posição ao atualizar)
+const itemById = new Map();
+
+const $main = document.getElementById("main-content");
+const $footer = document.getElementById("footer-updated");
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
 
 function fmtDate(iso) {
   if (!iso) return "sem data";
@@ -226,6 +369,268 @@ function fmtDate(iso) {
   if (parts.length !== 3) return iso;
   return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }
+
+function fmtTime(d) {
+  return d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+}
+
+/* ---------- Dados ---------- */
+
+function mediaKey(f) {
+  return f.id ? String(f.id) : String(f.url || "").split("?")[0];
+}
+
+// Mantém o link antigo de cada foto enquanto ele ainda vale. Assim, quando o painel
+// atualiza, o navegador não baixa tudo de novo (o link assinado muda a cada consulta).
+function stabilizeUrls(data) {
+  const now = Date.now();
+  data.groups.forEach(g => g.items.forEach(item => {
+    (item.fotos || []).forEach(f => {
+      f.key = mediaKey(f);
+      const cached = urlCache.get(f.key);
+      if (cached && now - cached.ts < URL_TTL_MS) {
+        f.url = cached.url;
+      } else {
+        urlCache.set(f.key, { url: f.url, ts: now });
+      }
+    });
+  }));
+}
+
+// "Impressão digital" do que aparece na tela (ignora os links assinados, que sempre mudam).
+function signature(data) {
+  return JSON.stringify(data.groups.map(g => [
+    g.id, g.title,
+    g.items.map(i => [
+      i.id, i.atividade, i.departamento, i.equipamento_local, i.tipo_manutencao,
+      i.prioridade, i.status, i.responsavel, i.prazo,
+      (i.fotos || []).map(f => f.key + ":" + f.tipo),
+    ]),
+  ]));
+}
+
+async function fetchData() {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch("/api/data", { cache: "no-store", signal: ctrl.signal });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    if (!data.groups) throw new Error(data.error || "resposta inesperada");
+    return data;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/* ---------- Mídia do card ---------- */
+
+function mediaSrc(f) {
+  const cur = urlCache.get(f.key);
+  return cur ? cur.url : f.url;
+}
+
+function slideHtml(f, n, total) {
+  const key = esc(f.key);
+  if (f.tipo === "video") {
+    // O vídeo só começa a carregar quando o card chega perto da tela (ver observer). "#t=0.1" mostra o 1º quadro.
+    return `<div class="slide"><video data-src="${esc(mediaSrc(f))}#t=0.1" data-key="${key}" controls playsinline preload="none"></video><div class="broken">Vídeo indisponível</div></div>`;
+  }
+  return `<div class="slide"><img src="${esc(mediaSrc(f))}" data-key="${key}" alt="Foto ${n} de ${total}" loading="lazy" decoding="async"><div class="broken">Foto indisponível</div></div>`;
+}
+
+function mediaHtml(item) {
+  const fotos = item.fotos || [];
+  if (fotos.length === 0) return `<div class="media placeholder">sem foto</div>`;
+  const slides = fotos.map((f, i) => slideHtml(f, i + 1, fotos.length)).join("");
+  if (fotos.length === 1) {
+    return `<div class="media" data-item="${esc(item.id)}"><div class="track">${slides}</div></div>`;
+  }
+  const dots = fotos.map((_, i) => `<i class="${i === 0 ? "on" : ""}"></i>`).join("");
+  return `<div class="media multi" data-item="${esc(item.id)}">
+    <div class="track">${slides}</div>
+    <button class="nav prev" aria-label="Anterior" data-dir="-1">‹</button>
+    <button class="nav next" aria-label="Próxima" data-dir="1">›</button>
+    <div class="badge">1/${fotos.length}</div>
+    <div class="dots">${dots}</div>
+  </div>`;
+}
+
+// Carrega os vídeos só quando o card se aproxima da área visível.
+const videoObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        // ratio > 0: o slide vizinho encostando na borda do carrossel não conta como "visível"
+        if (!e.isIntersecting || e.intersectionRatio === 0) return;
+        const v = e.target;
+        videoObserver.unobserve(v);
+        if (!v.getAttribute("src")) { v.preload = "metadata"; v.src = v.dataset.src; }
+      });
+    }, { rootMargin: "300px", threshold: [0, 0.01] })
+  : null;
+
+function initMedia(root) {
+  root.querySelectorAll("video[data-src]").forEach(v => {
+    if (videoObserver) videoObserver.observe(v);
+    else { v.preload = "metadata"; v.src = v.dataset.src; }
+  });
+  // volta cada carrossel para o slide em que estava
+  root.querySelectorAll(".media.multi").forEach(m => {
+    const idx = slideIndex.get(m.dataset.item);
+    if (idx) {
+      const track = m.querySelector(".track");
+      track.scrollLeft = idx * track.clientWidth;
+      updateCarouselUi(m, idx);
+    }
+  });
+}
+
+function updateCarouselUi(media, idx) {
+  const dots = media.querySelectorAll(".dots i");
+  dots.forEach((d, i) => d.classList.toggle("on", i === idx));
+  const badge = media.querySelector(".badge");
+  if (badge) badge.textContent = `${idx + 1}/${dots.length}`;
+}
+
+function goTo(media, idx, smooth) {
+  const track = media.querySelector(".track");
+  track.scrollTo({ left: idx * track.clientWidth, behavior: smooth ? "smooth" : "auto" });
+}
+
+// Rolagem do carrossel (o evento "scroll" não borbulha; por isso usamos a fase de captura)
+let scrollRaf = 0;
+$main.addEventListener("scroll", ev => {
+  const track = ev.target;
+  if (!track.classList || !track.classList.contains("track")) return;
+  cancelAnimationFrame(scrollRaf);
+  scrollRaf = requestAnimationFrame(() => {
+    const media = track.parentElement;
+    if (!media.classList.contains("multi")) return;
+    const idx = Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+    if (slideIndex.get(media.dataset.item) === idx) return;
+    slideIndex.set(media.dataset.item, idx);
+    updateCarouselUi(media, idx);
+    // pausa o vídeo dos slides que saíram da tela
+    track.querySelectorAll(".slide").forEach((s, i) => {
+      if (i !== idx) s.querySelectorAll("video").forEach(v => v.pause());
+    });
+  });
+}, true);
+
+// Link expirado ou falha de rede: tenta uma vez com o link mais novo; senão mostra aviso.
+$main.addEventListener("error", ev => {
+  const el = ev.target;
+  if (!el.dataset || !el.dataset.key || !/^(IMG|VIDEO)$/.test(el.tagName)) return;
+  if (el.tagName === "VIDEO" && !el.getAttribute("src")) return;
+  const cur = urlCache.get(el.dataset.key);
+  const wanted = cur ? cur.url + (el.tagName === "VIDEO" ? "#t=0.1" : "") : "";
+  if (wanted && el.dataset.tried !== wanted && el.getAttribute("src") !== wanted) {
+    el.dataset.tried = wanted;
+    el.src = wanted;
+  } else {
+    el.closest(".slide").classList.add("failed");
+  }
+}, true);
+
+// Se o painel ficou aberto por muito tempo, troca o link das mídias que ainda não carregaram.
+function refreshPendingMedia() {
+  $main.querySelectorAll("img[data-key]").forEach(img => {
+    const cur = urlCache.get(img.dataset.key);
+    if (cur && img.getAttribute("src") !== cur.url && (!img.complete || img.naturalWidth === 0)) img.src = cur.url;
+  });
+  $main.querySelectorAll("video[data-key]").forEach(v => {
+    const cur = urlCache.get(v.dataset.key);
+    if (!cur) return;
+    const wanted = cur.url + "#t=0.1";
+    if (v.dataset.src !== wanted) {
+      v.dataset.src = wanted;
+      if (v.getAttribute("src") && v.readyState === 0 && v.paused) v.src = wanted;
+    }
+  });
+}
+
+/* ---------- Cliques: setas, bolinhas e ampliar foto ---------- */
+
+$main.addEventListener("click", ev => {
+  const nav = ev.target.closest(".nav");
+  if (nav) {
+    const media = nav.closest(".media");
+    const total = media.querySelectorAll(".slide").length;
+    const cur = slideIndex.get(media.dataset.item) || 0;
+    const next = (cur + Number(nav.dataset.dir) + total) % total; // volta ao início depois da última
+    goTo(media, next, true);
+    return;
+  }
+  const img = ev.target.closest(".slide img");
+  if (img) {
+    const media = img.closest(".media");
+    const slideNo = Array.from(media.querySelectorAll(".slide")).indexOf(img.closest(".slide"));
+    openLightbox(media.dataset.item, Math.max(slideNo, 0));
+  }
+});
+
+const $lb = document.getElementById("lb");
+const $lbStage = document.getElementById("lb-stage");
+const $lbCount = document.getElementById("lb-count");
+let lbItem = null;
+let lbIdx = 0;
+
+function renderLightbox() {
+  const fotos = lbItem.fotos || [];
+  const f = fotos[lbIdx];
+  const src = esc(mediaSrc(f));
+  $lbStage.innerHTML = f.tipo === "video"
+    ? `<video src="${src}" controls autoplay playsinline></video>`
+    : `<img src="${src}" alt="">`;
+  $lbCount.textContent = `${esc(lbItem.atividade)} — ${lbIdx + 1}/${fotos.length}`;
+  const many = fotos.length > 1;
+  document.getElementById("lb-prev").style.display = many ? "" : "none";
+  document.getElementById("lb-next").style.display = many ? "" : "none";
+}
+
+function openLightbox(itemId, idx) {
+  lbItem = itemById.get(String(itemId));
+  if (!lbItem) return;
+  lbIdx = idx;
+  renderLightbox();
+  $lb.classList.add("open");
+  $lb.setAttribute("aria-hidden", "false");
+}
+
+function closeLightbox() {
+  $lb.classList.remove("open");
+  $lb.setAttribute("aria-hidden", "true");
+  $lbStage.innerHTML = "";
+  lbItem = null;
+}
+
+function stepLightbox(dir) {
+  if (!lbItem) return;
+  const n = (lbItem.fotos || []).length;
+  lbIdx = (lbIdx + dir + n) % n;
+  renderLightbox();
+}
+
+document.getElementById("lb-close").addEventListener("click", closeLightbox);
+document.getElementById("lb-prev").addEventListener("click", () => stepLightbox(-1));
+document.getElementById("lb-next").addEventListener("click", () => stepLightbox(1));
+$lb.addEventListener("click", ev => { if (ev.target === $lb || ev.target === $lbStage) closeLightbox(); });
+document.addEventListener("keydown", ev => {
+  if (!lbItem) return;
+  if (ev.key === "Escape") closeLightbox();
+  else if (ev.key === "ArrowLeft") stepLightbox(-1);
+  else if (ev.key === "ArrowRight") stepLightbox(1);
+});
+let touchX = null;
+$lb.addEventListener("touchstart", ev => { touchX = ev.touches[0].clientX; }, { passive: true });
+$lb.addEventListener("touchend", ev => {
+  if (touchX === null) return;
+  const dx = ev.changedTouches[0].clientX - touchX;
+  touchX = null;
+  if (Math.abs(dx) > 50) stepLightbox(dx < 0 ? 1 : -1);
+}, { passive: true });
+
+/* ---------- Filtros ---------- */
 
 function buildChips(containerId, values, onSelect) {
   const container = document.getElementById(containerId);
@@ -246,21 +651,44 @@ function selectChip(container, chipEl, current, value) {
   return value;
 }
 
+/* ---------- Desenho da tela ---------- */
+
+function cardHtml(item) {
+  const statusColor = STATUS_COLORS[item.status] || "var(--muted)";
+  const prioColor = PRIORIDADE_COLORS[item.prioridade] || "var(--muted)";
+  const tipoColor = TIPO_COLORS[item.tipo_manutencao] || "var(--muted)";
+  const depColor = DEP_COLORS[item.departamento] || "var(--muted)";
+  return `
+    <div class="card">
+      ${mediaHtml(item)}
+      <div class="card-body">
+        <div class="atividade">${esc(item.atividade)}</div>
+        <div class="tags">
+          ${item.status ? `<span class="tag" style="background:${statusColor}">${esc(item.status)}</span>` : ""}
+          ${item.prioridade ? `<span class="tag" style="background:${prioColor}">${esc(item.prioridade)}</span>` : ""}
+          ${item.departamento ? `<span class="tag" style="background:${depColor}">${esc(item.departamento)}</span>` : ""}
+          ${item.tipo_manutencao ? `<span class="tag" style="background:${tipoColor}">${esc(item.tipo_manutencao)}</span>` : ""}
+        </div>
+        <div class="card-footer">
+          <div>
+            <div>${item.equipamento_local ? esc(item.equipamento_local) : "sem equipamento/local"}</div>
+            <div class="sub">${item.responsavel ? esc(item.responsavel) : "sem responsável"}</div>
+          </div>
+          <div>${fmtDate(item.prazo)}</div>
+        </div>
+      </div>
+    </div>`;
+}
+
 function render() {
   if (!allData) return;
   const search = document.getElementById("search-input").value.trim().toLowerCase();
+  const counters = { topics: 0, group_mm72db89: 0, group_mm7217sw: 0, group_mm7298xt: 0 };
+  let html = "";
+  let total = 0;
 
-  const groupCounters = { topics: 0, group_mm72db89: 0, group_mm7217sw: 0, group_mm7298xt: 0 };
-  const main = document.getElementById("main-content");
-  main.innerHTML = "";
-  let totalRendered = 0;
-
-  const dotColors = {
-    topics: "var(--status-pendente)",
-    group_mm72db89: "var(--status-em-andamento)",
-    group_mm7217sw: "#cfd3db",
-    group_mm7298xt: "var(--status-concluido)",
-  };
+  itemById.clear();
+  allData.groups.forEach(g => g.items.forEach(i => itemById.set(String(i.id), i)));
 
   allData.groups.forEach(group => {
     const filtered = group.items.filter(item => {
@@ -275,93 +703,72 @@ function render() {
       return true;
     });
 
-    groupCounters[group.id] = filtered.length;
-    totalRendered += filtered.length;
+    if (group.id in counters) counters[group.id] = filtered.length;
+    total += filtered.length;
 
-    const header = document.createElement("div");
-    header.className = "group-header";
-    header.innerHTML = `
-      <div class="dot" style="background:${dotColors[group.id] || '#666'}"></div>
-      <h2>${group.title}</h2>
-      <span class="count">(${filtered.length})</span>
-    `;
-    main.appendChild(header);
-
-    if (filtered.length === 0) {
-      const empty = document.createElement("div");
-      empty.className = "empty-state";
-      empty.textContent = "Nenhuma atividade neste grupo com os filtros atuais.";
-      main.appendChild(empty);
-      return;
-    }
-
-    const cardsWrap = document.createElement("div");
-    cardsWrap.className = "cards";
-
-    filtered.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const statusColor = STATUS_COLORS[item.status] || "var(--muted)";
-      const prioColor = PRIORIDADE_COLORS[item.prioridade] || "var(--muted)";
-      const tipoColor = TIPO_COLORS[item.tipo_manutencao] || "var(--muted)";
-      const depColor = DEP_COLORS[item.departamento] || "var(--muted)";
-      const foto = (item.fotos && item.fotos.length > 0) ? item.fotos[0] : null;
-
-      let thumbHtml;
-      if (foto && foto.tipo === "video") {
-        thumbHtml = `<video class="thumb" src="${foto.url}" controls preload="metadata"></video>`;
-      } else if (foto) {
-        thumbHtml = `<img class="thumb" src="${foto.url}" alt="Foto da atividade" loading="lazy">`;
-      } else {
-        thumbHtml = `<div class="thumb placeholder">sem foto</div>`;
-      }
-
-      card.innerHTML = `
-        ${thumbHtml}
-        <div class="card-body">
-          <div class="atividade">${item.atividade}</div>
-          <div class="tags">
-            ${item.status ? `<span class="tag" style="background:${statusColor}">${item.status}</span>` : ""}
-            ${item.prioridade ? `<span class="tag" style="background:${prioColor}">${item.prioridade}</span>` : ""}
-            ${item.departamento ? `<span class="tag" style="background:${depColor}">${item.departamento}</span>` : ""}
-            ${item.tipo_manutencao ? `<span class="tag" style="background:${tipoColor}">${item.tipo_manutencao}</span>` : ""}
-          </div>
-          <div class="card-footer">
-            <div>
-              <div>${item.equipamento_local ? item.equipamento_local : "sem equipamento/local"}</div>
-              <div class="sub">${item.responsavel ? item.responsavel : "sem responsável"}</div>
-            </div>
-            <div>${fmtDate(item.prazo)}</div>
-          </div>
-        </div>
-      `;
-      cardsWrap.appendChild(card);
-    });
-
-    main.appendChild(cardsWrap);
+    html += `
+      <div class="group-header">
+        <div class="dot" style="background:${DOT_COLORS[group.id] || "#666"}"></div>
+        <h2>${esc(group.title)}</h2>
+        <span class="count">(${filtered.length})</span>
+      </div>`;
+    html += filtered.length === 0
+      ? `<div class="empty-state">Nenhuma atividade neste grupo com os filtros atuais.</div>`
+      : `<div class="cards">${filtered.map(cardHtml).join("")}</div>`;
   });
 
-  if (totalRendered === 0) {
-    main.innerHTML = '<div class="empty-state">Nenhuma atividade encontrada com os filtros atuais.</div>';
-  }
+  // mantém a rolagem da página onde estava
+  const y = window.scrollY;
+  $main.innerHTML = total === 0
+    ? '<div class="empty-state">Nenhuma atividade encontrada com os filtros atuais.</div>'
+    : html;
+  initMedia($main);
+  window.scrollTo(0, y);
 
-  document.getElementById("count-urgente").textContent = groupCounters.topics;
-  document.getElementById("count-andamento").textContent = groupCounters.group_mm72db89;
-  document.getElementById("count-backlog").textContent = groupCounters.group_mm7217sw;
-  document.getElementById("count-concluido").textContent = groupCounters.group_mm7298xt;
+  document.getElementById("count-urgente").textContent = counters.topics;
+  document.getElementById("count-andamento").textContent = counters.group_mm72db89;
+  document.getElementById("count-backlog").textContent = counters.group_mm7217sw;
+  document.getElementById("count-concluido").textContent = counters.group_mm7298xt;
 }
 
-async function init() {
-  try {
-    const res = await fetch("/api/data", { cache: "no-store" });
-    allData = await res.json();
-  } catch (e) {
-    document.getElementById("main-content").innerHTML =
-      '<div class="empty-state">Não foi possível carregar os dados. Verifique se o token do Monday está configurado no Vercel (MONDAY_API_TOKEN).</div>';
-    return;
-  }
+/* ---------- Atualização automática ---------- */
 
+function setFooter(text, warn) {
+  $footer.textContent = text;
+  $footer.classList.toggle("warn", !!warn);
+}
+
+let lastOkAt = null;
+let refreshing = false;
+
+async function refresh(first) {
+  if (refreshing) return;
+  refreshing = true;
+  try {
+    const data = await fetchData();
+    stabilizeUrls(data);
+    const sig = signature(data);
+    allData = data;
+    lastOkAt = new Date();
+    if (sig !== lastSignature) {
+      lastSignature = sig;
+      render();            // só redesenha quando algo mudou de verdade (sem piscar)
+    } else {
+      refreshPendingMedia();
+    }
+    setFooter(`Atualizado às ${fmtTime(lastOkAt)} · atualiza sozinho a cada ${REFRESH_MS / 1000} s`, false);
+  } catch (e) {
+    if (first && !allData) {
+      $main.innerHTML = '<div class="empty-state">Não foi possível carregar os dados. Verifique se o token do Monday está configurado no Vercel (MONDAY_API_TOKEN).</div>';
+    } else if (lastOkAt) {
+      setFooter(`Sem conexão com o Monday — mostrando dados de ${fmtTime(lastOkAt)}`, true);
+    }
+  } finally {
+    refreshing = false;
+  }
+}
+
+function init() {
   buildChips("status-filters", ["Não Iniciado", "Planejado", "Em Andamento", "Pendente", "Concluído"], (v, el) => {
     activeStatus = selectChip(document.getElementById("status-filters"), el, activeStatus, v);
     render();
@@ -378,15 +785,12 @@ async function init() {
     activeTipo = selectChip(document.getElementById("tipo-filters"), el, activeTipo, v);
     render();
   });
-
   document.getElementById("search-input").addEventListener("input", render);
 
-  if (allData.generated_at) {
-    const d = new Date(allData.generated_at);
-    document.getElementById("footer-updated").textContent = "Atualizado agora: " + d.toLocaleString("pt-BR");
-  }
-
-  render();
+  refresh(true);
+  setInterval(() => { if (!document.hidden) refresh(false); }, REFRESH_MS);
+  // ao voltar para a aba, atualiza na hora
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(false); });
 }
 
 init();

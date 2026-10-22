@@ -307,9 +307,11 @@
 </div>
 
 <script>
-const REFRESH_MS = 30000;          // atualiza os dados sozinho a cada 30 s
+// O painel pergunta ao NOSSO servidor se algo mudou (isso não consulta o Monday).
+// O servidor só vai ao Monday quando o Monday avisa que houve mudança.
+const REFRESH_MS = 20000;
 const FETCH_TIMEOUT_MS = 20000;
-const URL_TTL_MS = 45 * 60 * 1000; // os links de foto do Monday expiram em 1 h; renova antes disso
+const URL_TTL_MS = 25 * 60 * 1000; // os links de foto do Monday expiram em 1 h; troca antes disso (idade contada desde que o servidor os gerou)
 
 const STATUS_COLORS = {
   "Não Iniciado": "var(--status-nao-iniciado)",
@@ -347,6 +349,7 @@ const DOT_COLORS = {
 
 let allData = null;
 let lastSignature = "";
+let currentVersion = "";
 let activeStatus = null;
 let activePrioridade = null;
 let activeDepartamento = null;
@@ -386,6 +389,7 @@ function mediaKey(f) {
 // atualiza, o navegador não baixa tudo de novo (o link assinado muda a cada consulta).
 function stabilizeUrls(data) {
   const now = Date.now();
+  const madeAt = Date.parse(data.generated_at) || now; // quando o servidor gerou estes links
   data.groups.forEach(g => g.items.forEach(item => {
     (item.fotos || []).forEach(f => {
       f.key = mediaKey(f);
@@ -393,7 +397,7 @@ function stabilizeUrls(data) {
       if (cached && now - cached.ts < URL_TTL_MS) {
         f.url = cached.url;
       } else {
-        urlCache.set(f.key, { url: f.url, ts: now });
+        urlCache.set(f.key, { url: f.url, ts: madeAt });
       }
     });
   }));
@@ -415,9 +419,12 @@ async function fetchData() {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
   try {
-    const res = await fetch("/api/data", { cache: "no-store", signal: ctrl.signal });
+    // Com "v", o servidor responde só {unchanged:true} quando nada mudou (resposta minúscula).
+    const url = "/api/data" + (currentVersion ? "?v=" + encodeURIComponent(currentVersion) : "");
+    const res = await fetch(url, { cache: "no-store", signal: ctrl.signal });
     if (!res.ok) throw new Error("HTTP " + res.status);
     const data = await res.json();
+    if (data.unchanged) return data;
     if (!data.groups) throw new Error(data.error || "resposta inesperada");
     return data;
   } finally {
@@ -741,6 +748,7 @@ function setFooter(text, warn) {
 }
 
 let lastOkAt = null;
+let dataTime = null;   // quando o servidor buscou os dados no Monday
 let refreshing = false;
 
 async function refresh(first) {
@@ -748,22 +756,34 @@ async function refresh(first) {
   refreshing = true;
   try {
     const data = await fetchData();
-    stabilizeUrls(data);
-    const sig = signature(data);
-    allData = data;
     lastOkAt = new Date();
-    if (sig !== lastSignature) {
-      lastSignature = sig;
-      render();            // só redesenha quando algo mudou de verdade (sem piscar)
-    } else {
+
+    if (data.unchanged) {
+      // Nada mudou no Monday: não redesenha nada.
       refreshPendingMedia();
+    } else {
+      stabilizeUrls(data);
+      const sig = signature(data);
+      allData = data;
+      currentVersion = data.version || "";
+      dataTime = new Date(data.generated_at || Date.now());
+      if (sig !== lastSignature) {
+        lastSignature = sig;
+        render();          // só redesenha quando algo mudou de verdade (sem piscar)
+      } else {
+        refreshPendingMedia();
+      }
+      if (data.stale) {
+        setFooter(`Monday indisponível no momento — mostrando dados de ${fmtTime(dataTime)}`, true);
+        return;
+      }
     }
-    setFooter(`Atualizado às ${fmtTime(lastOkAt)} · atualiza sozinho a cada ${REFRESH_MS / 1000} s`, false);
+    setFooter(`Dados de ${fmtTime(dataTime || lastOkAt)} · atualiza sozinho quando algo muda no Monday`, false);
   } catch (e) {
     if (first && !allData) {
       $main.innerHTML = '<div class="empty-state">Não foi possível carregar os dados. Verifique se o token do Monday está configurado no Vercel (MONDAY_API_TOKEN).</div>';
     } else if (lastOkAt) {
-      setFooter(`Sem conexão com o Monday — mostrando dados de ${fmtTime(lastOkAt)}`, true);
+      setFooter(`Sem conexão com o servidor — mostrando dados de ${fmtTime(dataTime || lastOkAt)}`, true);
     }
   } finally {
     refreshing = false;

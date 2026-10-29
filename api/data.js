@@ -43,7 +43,8 @@ query ($boardId: [ID!]) {
         group { id title }
         column_values(ids: [
           "color_mm7265sy", "text_mm729y26", "color_mm72kjc4",
-          "color_mm72z03g", "color_mm72sa2r", "multiple_person_mm72f71j", "date_mm72z3ve"
+          "color_mm72z03g", "color_mm72sa2r", "multiple_person_mm72f71j", "text_mm774v7z",
+          "date_mm72z3ve", "text_mm8k5kt0"
         ]) {
           id
           text
@@ -122,7 +123,8 @@ async function fetchFromMonday(token) {
       tipo_manutencao: col["color_mm72kjc4"] || "",
       prioridade: col["color_mm72z03g"] || "",
       status: col["color_mm72sa2r"] || "",
-      responsavel: col["multiple_person_mm72f71j"] || "",
+      responsavel: col["text_mm774v7z"] || col["multiple_person_mm72f71j"] || "",
+      os: (col["text_mm8k5kt0"] || "").trim(),
       prazo: col["date_mm72z3ve"] || "",
       fotos,
     };

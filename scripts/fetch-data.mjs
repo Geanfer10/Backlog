@@ -15,7 +15,9 @@ const COLUMN_IDS = [
   "color_mm72kjc4", // Tipo de Manutenção
   "color_mm72z03g", // Prioridade
   "color_mm72sa2r", // Status
-  "multiple_person_mm72f71j", // Responsável
+  "multiple_person_mm72f71j", // Responsável (antigo)
+  "text_mm774v7z", // Responsável (texto)
+  "text_mm8k5kt0", // OS
   "date_mm72z3ve", // Prazo
   "file_mm722xc", // Fotos
 ];
@@ -129,7 +131,8 @@ async function main() {
       tipo_manutencao: get("color_mm72kjc4"),
       prioridade: get("color_mm72z03g"),
       status: get("color_mm72sa2r"),
-      responsaveis: get("multiple_person_mm72f71j"),
+      responsaveis: get("text_mm774v7z") || get("multiple_person_mm72f71j"),
+      os: get("text_mm8k5kt0"),
       prazo: get("date_mm72z3ve"),
       fotos,
     };

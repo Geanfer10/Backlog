@@ -191,6 +191,8 @@
   .card .atividade { font-weight: 700; font-size: 15px; margin-bottom: 10px; line-height: 1.3; }
 
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag.tag-os { background: #1f2937; color: #fff; letter-spacing: .3px; }
+  .tag.tag-noos { background: transparent; color: var(--muted); border: 1px dashed var(--muted); font-weight: 600; }
   .tag { font-size: 11.5px; padding: 3px 9px; border-radius: 5px; font-weight: 700; color: #0b0e14; }
   .tag.plain { background: transparent; border: 1px solid var(--border); color: var(--muted); font-weight: 500; }
 
@@ -280,9 +282,13 @@
     <div class="filter-title">Tipo de Manutenção</div>
     <div class="chip-row" id="tipo-filters"></div>
   </div>
+  <div class="filter-group">
+    <div class="filter-title">Ordem de Serviço (OS)</div>
+    <div class="chip-row" id="os-filters"></div>
+  </div>
   <div class="filter-group search-box">
     <div class="filter-title">Buscar</div>
-    <input type="text" id="search-input" placeholder="equipamento, local, atividade...">
+    <input type="text" id="search-input" placeholder="equipamento, local, atividade, nº da OS...">
   </div>
 </div>
 
@@ -354,6 +360,7 @@ let activeStatus = null;
 let activePrioridade = null;
 let activeDepartamento = null;
 let activeTipo = null;
+let activeOs = null;
 
 const urlCache = new Map();   // id da mídia -> { url, ts }  (mantém o mesmo link enquanto vale; o navegador reaproveita o cache)
 const slideIndex = new Map(); // id do item -> slide atual do carrossel (não perde a posição ao atualizar)
@@ -409,7 +416,7 @@ function signature(data) {
     g.id, g.title,
     g.items.map(i => [
       i.id, i.atividade, i.departamento, i.equipamento_local, i.tipo_manutencao,
-      i.prioridade, i.status, i.responsavel, i.prazo,
+      i.prioridade, i.status, i.responsavel, i.prazo, i.os,
       (i.fotos || []).map(f => f.key + ":" + f.tipo),
     ]),
   ]));
@@ -677,6 +684,7 @@ function cardHtml(item) {
           ${item.prioridade ? `<span class="tag" style="background:${prioColor}">${esc(item.prioridade)}</span>` : ""}
           ${item.departamento ? `<span class="tag" style="background:${depColor}">${esc(item.departamento)}</span>` : ""}
           ${item.tipo_manutencao ? `<span class="tag" style="background:${tipoColor}">${esc(item.tipo_manutencao)}</span>` : ""}
+          ${item.os ? `<span class="tag tag-os">OS ${esc(item.os)}</span>` : `<span class="tag tag-noos">Sem OS</span>`}
         </div>
         <div class="card-footer">
           <div>
@@ -705,8 +713,10 @@ function render() {
       if (activePrioridade && item.prioridade !== activePrioridade) return false;
       if (activeDepartamento && item.departamento !== activeDepartamento) return false;
       if (activeTipo && item.tipo_manutencao !== activeTipo) return false;
+      if (activeOs === "Com OS" && !item.os) return false;
+      if (activeOs === "Sem OS" && item.os) return false;
       if (search) {
-        const haystack = `${item.atividade} ${item.equipamento_local} ${item.responsavel}`.toLowerCase();
+        const haystack = `${item.atividade} ${item.equipamento_local} ${item.responsavel} ${item.os || ""}`.toLowerCase();
         if (!haystack.includes(search)) return false;
       }
       return true;
@@ -805,6 +815,10 @@ function init() {
   });
   buildChips("tipo-filters", ["Preventiva", "Corretiva", "Preditiva", "Melhoria"], (v, el) => {
     activeTipo = selectChip(document.getElementById("tipo-filters"), el, activeTipo, v);
+    render();
+  });
+  buildChips("os-filters", ["Com OS", "Sem OS"], (v, el) => {
+    activeOs = selectChip(document.getElementById("os-filters"), el, activeOs, v);
     render();
   });
   document.getElementById("search-input").addEventListener("input", render);

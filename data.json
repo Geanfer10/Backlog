@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T18:16:56.533Z",
+  "generated_at": "2026-10-29T10:55:45.593Z",
   "board_name": "Backlog de Atividades - Manutenção",
   "board_url": "https://messigean18s-team.monday.com/boards/18430494778",
   "groups": [
@@ -36,77 +36,77 @@
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-10 at 09.19.26.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239169211/WhatsApp%20Image%202026-09-10%20at%2009.19.26.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=62269192ff83641ca812d35d292e4acf7d2bc3864fd874d7d82f9ee9118c4575"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239169211/WhatsApp%20Image%202026-09-10%20at%2009.19.26.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a46fa8e49ed7cd6a2a61667d424665ab65839ea19a9213f052d2b81feefd5ab3"
         }
       ]
     },
     {
       "id": "13016194115",
       "name": "Revisar corrente da esteira TP08",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "Esteira TP08",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.03.16.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239168381/WhatsApp%20Image%202026-09-09%20at%2008.03.16.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=739ad53656e0dfcd203c0c5eb122b99d646bcd51794ee96f1cfe87c63a0d866d"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239168381/WhatsApp%20Image%202026-09-09%20at%2008.03.16.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4f25ee3549168ab5ae5ba0b9201b50c7798fec16ba22642c62631d97ef9bff22"
         }
       ]
     },
     {
       "id": "13016180292",
       "name": "Revisar corrente da esteira alimentação robô desempilhador",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "Esteira Alimentação TP06",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.05.38.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239166434/WhatsApp%20Image%202026-09-09%20at%2008.05.38.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0904e30da39fe1bc4d6be693c95a0b9f18f204d3b6eff61c6b3a6579dc73b2ea"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239166434/WhatsApp%20Image%202026-09-09%20at%2008.05.38.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8fe91b962c5d14cd529bc086532c7a5927a069246b7fc73f63c0a0def2ff896a"
         }
       ]
     },
     {
       "id": "13016198861",
       "name": "Verificar vibração no redutor da esteira de caixa Encaixotamento Mespack E",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "Esteira ATM06",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": [
         {
           "name": "WhatsApp Video 2026-09-10 at 09.19.26.mp4",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3240482113/WhatsApp%20Video%202026-09-10%20at%2009.19.26.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4e5f5258733d4267f57e8301e091ff16c5d7c24c87e8fca55f3b20ff0ea85223"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3240482113/WhatsApp%20Video%202026-09-10%20at%2009.19.26.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=afb08c60c0bede18d35b33e0076dbfa1c9ff2cfbb4cdb95b934064120ef48005"
         }
       ]
     },
     {
       "id": "13020911584",
       "name": "Manutenção No conjunto de redutor da packform",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": []
@@ -114,127 +114,65 @@
     {
       "id": "13024898594",
       "name": "Soldar suporte da esteira TP-BJ12",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "Esteria TP-BJ12",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Média",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-11 at 06.42.46.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3241549700/WhatsApp%20Image%202026-09-11%20at%2006.42.46.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4359168c02e667cc77c7539f58926600c4cfe9396a7f9fe02e6e140596178b95"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3241549700/WhatsApp%20Image%202026-09-11%20at%2006.42.46.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=042dfd5beb0aff606425f0da75ae7855cf644f1f15c80e19ec107e6f189dbcd5"
         }
       ]
     },
     {
-      "id": "13024911791",
-      "name": "Troca de rolamento da roldana TB-BJ10",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
+      "id": "13228979212",
+      "name": "Conferência de vazamento do pasteurizador",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
-      "equipamento": "",
+      "equipamento": "Pasteurizador",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
-      "prazo": "2026-09-13",
-      "fotos": [
-        {
-          "name": "WhatsApp Image 2026-09-11 at 06.44.00.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3241550616/WhatsApp%20Image%202026-09-11%20at%2006.44.00.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dcfc1f3ca345a3b1e364a28daad3725518665370d825b51f905760ec9d02b687"
-        }
-      ]
-    },
-    {
-      "id": "13058978424",
-      "name": "Solda no Bule Mespack E",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
-      "departamento": "Mecânica",
-      "equipamento": "Sala de Preparação",
-      "tipo_manutencao": "Corretiva",
-      "prioridade": "Alta",
-      "status": "Planejado",
-      "responsaveis": "",
-      "prazo": "2026-09-20",
-      "fotos": [
-        {
-          "name": "WhatsApp Image 2026-09-16 at 08.45.53.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3251757565/WhatsApp%20Image%202026-09-16%20at%2008.45.53.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=86f212ff18127da1d3e5a28975e0edab8cb6e0f51b51f1622c96a5614b84cfc7"
-        }
-      ]
-    },
-    {
-      "id": "13059107909",
-      "name": "Solda Tubulação Vazamento de Vapor Atras da Autoclave Ferlo 05",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
-      "departamento": "Mecânica",
-      "equipamento": "",
-      "tipo_manutencao": "Corretiva",
-      "prioridade": "Alta",
-      "status": "Planejado",
-      "responsaveis": "",
-      "prazo": "2026-09-20",
-      "fotos": [
-        {
-          "name": "WhatsApp Video 2026-09-16 at 09.38.52.mp4",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3251754948/WhatsApp%20Video%202026-09-16%20at%2009.38.52.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6a9c505a1bbd8941e98df1568ca46078913d6c32a8a2c7c98691effe523d5f17"
-        }
-      ]
-    },
-    {
-      "id": "13060132836",
-      "name": "Solda Tubulação Vazamento de água das Desgranadeiras",
-      "group_id": "group_mm7217sw",
-      "group_title": "⚪ Backlog (Não Iniciado)",
-      "departamento": "Mecânica",
-      "equipamento": "Desgranadeiras",
-      "tipo_manutencao": "Corretiva",
-      "prioridade": "Alta",
-      "status": "Planejado",
-      "responsaveis": "",
-      "prazo": "2026-09-20",
-      "fotos": [
-        {
-          "name": "WhatsApp Image 2026-09-16 at 11.19.55.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3251754058/WhatsApp%20Image%202026-09-16%20at%2011.19.55.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d8b3c886e3afb03b408cf65761de939c1eaa53ced657e666d7e3a791ef228861"
-        }
-      ]
+      "prazo": "2026-10-09",
+      "fotos": []
     },
     {
       "id": "13016168367",
       "name": "Troca do rolamento da esteira TP08",
-      "group_id": "topics",
-      "group_title": "🔴 Urgente / Alta Prioridade",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "Esteira TP08",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": [
         {
           "name": "WhatsApp Image 2026-09-09 at 08.04.15.jpeg",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239167994/WhatsApp%20Image%202026-09-09%20at%2008.04.15.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1618b5794a367a1a088ff56d4b0b9bfaae63131667d69047393ff81ec1b0731f"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3239167994/WhatsApp%20Image%202026-09-09%20at%2008.04.15.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d09ff883f1c45e6c102f00230af031ff4e50d31d220d4b5b3f8f9db8fefc6663"
         }
       ]
     },
     {
       "id": "13016229004",
       "name": "Manutenção no sistema de ar comprimido Mespack E",
-      "group_id": "topics",
-      "group_title": "🔴 Urgente / Alta Prioridade",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Elétrica",
       "equipamento": "Desbobinador Mespack E",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": []
@@ -242,13 +180,13 @@
     {
       "id": "13020895126",
       "name": "Troca da Tolva Mespack D",
-      "group_id": "topics",
-      "group_title": "🔴 Urgente / Alta Prioridade",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Elétrica",
       "equipamento": "Tolva Mespack D",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-13",
       "fotos": []
@@ -256,34 +194,478 @@
     {
       "id": "13024911881",
       "name": "Revisão no Elevador de bandeja TP-BJ4",
-      "group_id": "topics",
-      "group_title": "🔴 Urgente / Alta Prioridade",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "encestaador",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-26",
       "fotos": [
         {
           "name": "WhatsApp Video 2026-09-11 at 06.43.41.mp4",
-          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3241551975/WhatsApp%20Video%202026-09-11%20at%2006.43.41.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXBU3HSM42%2F20260916%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260916T181656Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e3eb2a720d83a4a62d8c2bf58e987663680d51d0e09f7f1ed12b4e964cb85152"
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3241551975/WhatsApp%20Video%202026-09-11%20at%2006.43.41.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0da78e9039682d6fa2d35f4d4a62bb1bd2c4c21e1eb2b2bd8a75d52a69d5e3c5"
         }
       ]
     },
     {
       "id": "13030854222",
       "name": "Base das bandeja da linha retort \" desgaste \"",
-      "group_id": "topics",
-      "group_title": "🔴 Urgente / Alta Prioridade",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
       "departamento": "Mecânica",
       "equipamento": "",
       "tipo_manutencao": "Corretiva",
       "prioridade": "Alta",
-      "status": "Planejado",
+      "status": "Concluído",
       "responsaveis": "",
       "prazo": "2026-09-26",
+      "fotos": []
+    },
+    {
+      "id": "13024911791",
+      "name": "Troca de rolamento da roldana TB-BJ10",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-09-13",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-09-11 at 06.44.00.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3241550616/WhatsApp%20Image%202026-09-11%20at%2006.44.00.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a5f1927c317618a0af1924d77444b2c87c4dedb071b62a0a799bfcd7067abc8a"
+        }
+      ]
+    },
+    {
+      "id": "13058978424",
+      "name": "Solda no Bule Mespack E",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Mecânica",
+      "equipamento": "Sala de Preparação",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-09-20",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-09-16 at 08.45.53.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3251757565/WhatsApp%20Image%202026-09-16%20at%2008.45.53.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=732a6105829d712da516af41777e1c2355a814324c82ed84a615f5e08372e5f3"
+        }
+      ]
+    },
+    {
+      "id": "13059107909",
+      "name": "Solda Tubulação Vazamento de Vapor Atras da Autoclave Ferlo 05",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Mecânica",
+      "equipamento": "",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-09-20",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-09-16 at 09.38.52.mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3251754948/WhatsApp%20Video%202026-09-16%20at%2009.38.52.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=01d5ed8e0a81df302b2a125c8fe5666b867a2acbf2d02b590b6c7ec56175a46b"
+        }
+      ]
+    },
+    {
+      "id": "13060132836",
+      "name": "Solda Tubulação Vazamento de água das Desgranadeiras",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Mecânica",
+      "equipamento": "Desgranadeiras",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-09-20",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-09-16 at 11.19.55.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3251754058/WhatsApp%20Image%202026-09-16%20at%2011.19.55.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d157fc05536e54fca8e632485575bd8abd915d1d16f3ae54df430d82481fa063"
+        }
+      ]
+    },
+    {
+      "id": "13249685680",
+      "name": "Cabo de alimentação do painel da Planta Mespack G",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Elétrica",
+      "equipamento": "Planta G",
+      "tipo_manutencao": "Preventiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-10-12",
+      "fotos": []
+    },
+    {
+      "id": "13249679263",
+      "name": "Trocar disjuntor de alimentação Caldeira HBREMER",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Elétrica",
+      "equipamento": "Caldeira HBREMER",
+      "tipo_manutencao": "Preventiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-10-12",
+      "fotos": []
+    },
+    {
+      "id": "13249686254",
+      "name": "Cabo de alimentação partida Preparação Bule Linha nova",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Elétrica",
+      "equipamento": "Sala de Preparação",
+      "tipo_manutencao": "Preventiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-10-12",
+      "fotos": []
+    },
+    {
+      "id": "13249704883",
+      "name": "Manutenção no forno da Shirinkadeira",
+      "group_id": "group_mm7298xt",
+      "group_title": "🟢 Concluído",
+      "departamento": "Elétrica",
+      "equipamento": "Shirinkadeira",
+      "tipo_manutencao": "Preventiva",
+      "prioridade": "Alta",
+      "status": "Concluído",
+      "responsaveis": "",
+      "prazo": "2026-10-12",
+      "fotos": []
+    },
+    {
+      "id": "13361905380",
+      "name": "Avaliar trocar o rolamento/Mancal",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Esteira TP-BJ10",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-10-22 at 10.14.28.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336377375/WhatsApp%20Image%202026-10-22%20at%2010.14.28.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3a778860ff75528580488109b0dcffa1f0e5eef04091952ce99764b1bab6c233"
+        }
+      ]
+    },
+    {
+      "id": "13361909449",
+      "name": "Avaliar trocar o rolamento/Mancal",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Esteira TP-BJ08",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-10-22 at 10.14.28 (1).jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336378757/WhatsApp%20Image%202026-10-22%20at%2010.14.28%20%281%29.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e64368fa8479d4bb92819b536f9f736b0539246bb29e11da91df375e7a298ffe"
+        }
+      ]
+    },
+    {
+      "id": "13361933672",
+      "name": "Troca retentor do redutor",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Esteira TP-BJ15",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-10-22 at 10.13.37.mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336385724/WhatsApp%20Video%202026-10-22%20at%2010.13.37.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c18d6eadd20cf7d56a14d6503e1f25a86c35a5080002d61e25a041fd7819a2c9"
+        }
+      ]
+    },
+    {
+      "id": "13361958862",
+      "name": "Revisão na corrente",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Esteira TP-BJ07",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-10-22 at 10.08.15.mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336388137/WhatsApp%20Video%202026-10-22%20at%2010.08.15.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fc66181f16ceb9cdf8a1809112310aadb58cdf68e4eb038fdfaf39e78af067d8"
+        }
+      ]
+    },
+    {
+      "id": "13361988022",
+      "name": "Verificar condições do rolamento da roldana",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Esteira TP-BJ11",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-10-20 at 08.51.54 (1).mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336400987/WhatsApp%20Video%202026-10-20%20at%2008.51.54%20%281%29.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b766bb61b2f7ccd4d124a46ab3f00c95f3885194550ba0b4a9214989898bff5c"
+        }
+      ]
+    },
+    {
+      "id": "13361991748",
+      "name": "troca de mancal e rolamento",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Verificar local",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-10-20 at 08.49.31.mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336400462/WhatsApp%20Video%202026-10-20%20at%2008.49.31.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=612d61d1eb175afcec901b5bbf514847231228eb5db38b4b4bf790376df93593"
+        }
+      ]
+    },
+    {
+      "id": "13361999387",
+      "name": "Troca de retentor do redutor",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Peneira Rotativa Retort",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-10-20 at 08.19.47.mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336405067/WhatsApp%20Video%202026-10-20%20at%2008.19.47.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3a06738c9c9d41e6069580f70bdd953e043c0c30454d917ca94a92423bc52f87"
+        }
+      ]
+    },
+    {
+      "id": "13362000734",
+      "name": "Troca de rolamento",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Esteira TP-BJ06",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-10-16 at 07.30.23.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336410007/WhatsApp%20Image%202026-10-16%20at%2007.30.23.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7be5745d9a88cafd8440e49dbf9be2bdee76647f2027981e4dfafbbb1ce3eb6f"
+        }
+      ]
+    },
+    {
+      "id": "13362067163",
+      "name": "Troca de valvulas borboleta",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Desenvase de polpa",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-10-21 at 15.34.47.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336412606/WhatsApp%20Image%202026-10-21%20at%2015.34.47.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b2fbe298c320855594bba1a4a2789adcfe8d0c5a982f4eb10083bf6e37256dd3"
+        },
+        {
+          "name": "WhatsApp Image 2026-10-21 at 15.34.48 (2).jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336413091/WhatsApp%20Image%202026-10-21%20at%2015.34.48%20%282%29.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1669e6d76961adc7c40c9ad4a220f5253c1978be9b0b95edc83ae3af4386ab0d"
+        },
+        {
+          "name": "WhatsApp Image 2026-10-21 at 15.34.48 (1).jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336413182/WhatsApp%20Image%202026-10-21%20at%2015.34.48%20%281%29.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=19ea5274e31daa58c54c8e1768977beeb8bc08e711b11ef4212f157e34ca2965"
+        },
+        {
+          "name": "WhatsApp Image 2026-10-21 at 15.34.48.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336413297/WhatsApp%20Image%202026-10-21%20at%2015.34.48.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=adfe20d483edd37ac9962c927b89b2c8d84630c86f1a3cb5b080ab1e2a71d8b4"
+        }
+      ]
+    },
+    {
+      "id": "13362041211",
+      "name": "Retirada de fitas dos bules",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Sala de Preparação",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-10-17 at 15.00.56 (2).jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336417652/WhatsApp%20Image%202026-10-17%20at%2015.00.56%20%282%29.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6241f0376899ef1f1c17da6a26b30f980d20c8a1f4579ffee820523124cbbc2f"
+        },
+        {
+          "name": "WhatsApp Image 2026-10-17 at 15.00.56 (1).jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336417771/WhatsApp%20Image%202026-10-17%20at%2015.00.56%20%281%29.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5b508680b781c1f9dd548cc20d25397a41d631d5b26b8c186cc1fa7025208472"
+        },
+        {
+          "name": "WhatsApp Image 2026-10-17 at 15.00.56.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336417927/WhatsApp%20Image%202026-10-17%20at%2015.00.56.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b8438748b6af522d103219fb1b0a741284072096e0a0408f8147c81a37c16cb1"
+        },
+        {
+          "name": "WhatsApp Image 2026-10-17 at 15.00.55 (1).jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336418073/WhatsApp%20Image%202026-10-17%20at%2015.00.55%20%281%29.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ddc323cd41dac2c8775ea82717bb8d6ef09bd1a664725c6f123aaff34ddf7ea2"
+        },
+        {
+          "name": "WhatsApp Image 2026-10-17 at 15.00.55.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3336418422/WhatsApp%20Image%202026-10-17%20at%2015.00.55.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fa8db812976e074ec5bd680928e3eaabc8169b8e5596d5e4b55911efd3f33c03"
+        }
+      ]
+    },
+    {
+      "id": "13362224370",
+      "name": "Cadeados nas portas de oficina de apoio da mecânica",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Oficinas",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": []
+    },
+    {
+      "id": "13362236299",
+      "name": "Adequar portão na sala asséptica tropical",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Sala asséptica",
+      "tipo_manutencao": "Melhoria",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": []
+    },
+    {
+      "id": "13367836990",
+      "name": "Remoção de estrutura metálica sem finalidade na preparação",
+      "group_id": "group_mm7217sw",
+      "group_title": "⚪ Backlog (Não Iniciado)",
+      "departamento": "Mecânica",
+      "equipamento": "Sala de Preparação",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Média",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-25",
+      "fotos": [
+        {
+          "name": "WhatsApp Image 2026-10-23 at 09.32.43.jpeg",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3337796964/WhatsApp%20Image%202026-10-23%20at%2009.32.43.jpeg?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=66c349c8a0e7438c48ed0f07f6af8a19561798e5a91179cd322ab7f75beced45"
+        }
+      ]
+    },
+    {
+      "id": "13371592455",
+      "name": "Adequação da tubulação de produto Pasteurizador 4KG",
+      "group_id": "topics",
+      "group_title": "🔴 Urgente / Alta Prioridade",
+      "departamento": "Mecânica",
+      "equipamento": "Pasteurizador",
+      "tipo_manutencao": "Corretiva",
+      "prioridade": "Alta",
+      "status": "Planejado",
+      "responsaveis": "",
+      "prazo": "2026-10-27",
+      "fotos": [
+        {
+          "name": "WhatsApp Video 2026-10-22 at 22.04.25 (1).mp4",
+          "url": "https://files-monday-com.s3.amazonaws.com/32690846/resources/3338990766/WhatsApp%20Video%202026-10-22%20at%2022.04.25%20%281%29.mp4?response-content-disposition=attachment&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MPVJMFXDTAO4FTO%2F20261029%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261029T105545Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9baa893b6dc533e369d08f96233127ef2c726ed8dca301f3d5159e8193153220"
+        }
+      ]
+    },
+    {
+      "id": "13375976827",
+      "name": "Atividade de capeamento e adequação nos pasteurizador",
+      "group_id": "topics",
+      "group_title": "🔴 Urgente / Alta Prioridade",
+      "departamento": "Elétrica",
+      "equipamento": "atomatados",
+      "tipo_manutencao": "Melhoria",
+      "prioridade": "Alta",
+      "status": "",
+      "responsaveis": "",
+      "prazo": "",
+      "fotos": []
+    },
+    {
+      "id": "13375993902",
+      "name": "Pintura da sala de preparação",
+      "group_id": "topics",
+      "group_title": "🔴 Urgente / Alta Prioridade",
+      "departamento": "Civil",
+      "equipamento": "preparação",
+      "tipo_manutencao": "Melhoria",
+      "prioridade": "Alta",
+      "status": "",
+      "responsaveis": "",
+      "prazo": "",
       "fotos": []
     }
   ]
